@@ -1,13 +1,256 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
-  <title>HFC Admin</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="half frame camera, half frame film photography, olympus pen, half frame club, film photography community">
+<meta name="description" content="Half Frame Club is a nine-year community dedicated to half frame film photography. Camera reviews, film guides, featured artists, and free editing tools for half frame photographers.">
+<meta property="og:title" content="HALF FRAME CLUB — CAMERAS, FILM AND PHOTOGRAPHY">
+<meta property="og:description" content="A nine-year community dedicated to half frame film photography.">
+<title>Half Frame Club — Half Frame Film Photography Cameras, Reviews & Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --teal: #2A7F7F;
+    --black: #0a0a0a;
+    --bg: #F8F5F0;
+    --text: #1a1a1a;
+    --mid: #EDE9E2;
+    --border: rgba(26,26,26,0.12);
+    --border-gold: rgba(201,168,76,0.4);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); font-weight: 300; line-height: 1.7; font-size: 16px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(248,245,240,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 0.5px solid var(--border-gold);
+  }
+  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+  .nav-logo img { height: 36px; width: auto; opacity: 0.85; transition: opacity 0.2s; }
+  .nav-logo img:hover { opacity: 1; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.6; transition: opacity 0.2s, color 0.2s; white-space: nowrap; }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-links a.shop { color: var(--gold); opacity: 0.9; }
+  .nav-right { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); text-decoration: none; opacity: 0.75; flex-shrink: 0; }
+  .nav-right:hover { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    padding: 5.5rem 3rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .hero-divider { width: 48px; height: 1px; background: var(--gold); margin-bottom: 1.5rem; }
+  .hero-eyebrow { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.1rem; display: block; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 5vw, 74px); font-weight: 300; line-height: 1.02; margin-bottom: 1.25rem; color: var(--black); }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-body { font-size: 16px; line-height: 1.85; opacity: 0.6; max-width: 400px; margin-bottom: 2.25rem; }
+  .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
+  .btn { display: inline-block; font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.85rem 2rem; border: 0.5px solid var(--gold); color: var(--gold); text-decoration: none; background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; }
+  .btn:hover { background: var(--gold); color: var(--black); }
+  .btn-ghost { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.45; transition: opacity 0.2s, color 0.2s; }
+  .btn-ghost:hover { opacity: 1; color: var(--teal); }
+
+  /* BEHOLD HERO FEED */
+  .hero-feed {
+    height: 420px;
+    overflow: hidden;
+    border: 0.5px solid var(--border);
+    background: var(--mid);
+    position: relative;
+  }
+  .hero-feed behold-widget {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .hero-feed::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60px;
+    background: linear-gradient(to top, var(--bg), transparent);
+    pointer-events: none;
+  }
+
+  /* SECTIONS */
+  section { padding: 3.5rem 3rem; border-bottom: 0.5px solid var(--border); }
+  .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3vw, 40px); font-weight: 300; color: var(--black); margin-bottom: 0.5rem; }
+  .section-sub { font-size: 15px; opacity: 0.55; max-width: 500px; margin-bottom: 2rem; line-height: 1.8; }
+  .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; }
+  .section-link { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); text-decoration: none; opacity: 0.75; white-space: nowrap; margin-left: 2rem; }
+  .section-link:hover { opacity: 1; }
+
+  /* JOURNAL CARDS — with images */
+  .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .card { border: 0.5px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
+  .card:hover { border-color: var(--border-gold); }
+  .card-img { height: 200px; background: var(--mid); overflow: hidden; border-bottom: 0.5px solid var(--border); }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
+  .card:hover .card-img img { transform: scale(1.03); }
+  .card-img-placeholder { opacity: 0.15; }
+  .card-img-placeholder svg { width: 28px; height: 28px; }
+  .card-body { padding: 1.25rem 1.5rem 1.5rem; }
+  .card-tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
+  .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; line-height: 1.25; margin-bottom: 0.4rem; color: var(--black); }
+  .card p { font-size: 14px; line-height: 1.75; opacity: 0.55; }
+
+  /* COMMUNITY FEED */
+  .community-section { background: var(--mid); }
+
+  /* SUBMIT CTA */
+  .submit-cta {
+    text-align: center;
+    padding: 4rem 3rem;
+    border-bottom: 0.5px solid var(--border);
+    position: relative;
+  }
+  .submit-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 1px; height: 3rem;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    opacity: 0.5;
+  }
+  .submit-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 48px); font-weight: 300; line-height: 1.1; margin: 1rem auto 1rem; max-width: 520px; color: var(--black); }
+  .submit-cta p { font-size: 15px; opacity: 0.5; margin-bottom: 2rem; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+  .cta-actions { display: flex; gap: 1.25rem; justify-content: center; align-items: center; }
+
+  /* FOOTER */
+  footer { padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border-gold); }
+  .footer-logo img { height: 28px; width: auto; opacity: 0.6; }
+  .footer-links { display: flex; gap: 1.75rem; list-style: none; }
+  .footer-links a { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.35; transition: opacity 0.2s; }
+  .footer-links a:hover { opacity: 0.8; }
+  .footer-copy { font-size: 11px; opacity: 0.3; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 5.5rem 1.5rem 3rem; }
+    .hero-feed { height: 280px; }
+    section { padding: 3rem 1.5rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1.25rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club"></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/shop.html" class="shop">Shop</a></li>
+  </ul>
+  <a class="nav-right" href="https://www.instagram.com/halfframeclub/" target="_blank" rel="noopener">@halfframeclub</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-divider"></div>
+    <span class="hero-eyebrow">Est. 2016 · Film Photography Community</span>
+    <h1>Shoot <em>half.</em><br>See more.</h1>
+    <p class="hero-body">A nine-year community dedicated to half frame film photography — the cameras, the people, and the art they create. Because the best images are the ones you didn't expect.</p>
+    <div class="hero-actions">
+      <a href="/journal.html" class="btn">Explore the Journal</a>
+      <a href="/shoot-kit.html" class="btn-ghost">Camera Reviews →</a>
+    </div>
+  </div>
+  <div class="hero-feed">
+    <behold-widget feed-id="KdT520fYDQ6c97ig7gGA"></behold-widget>
+    <script>
+      (() => {
+        const d = document, s = d.createElement("script");
+        s.type = "module";
+        s.src = "https://w.behold.so/widget.js";
+        d.head.append(s);
+      })();
+    </script>
+  </div>
+</div>
+
+<!-- JOURNAL — 3 posts with images -->
+<section>
+  <div class="section-header">
+    <div>
+      <span class="section-label">Latest from the Journal</span>
+      <h2 class="section-title">Recent Posts</h2>
+      <p class="section-sub">Camera reviews, community features, and essays on the art of shooting half frame.</p>
+    </div>
+    <a href="/journal.html" class="section-link">View all →</a>
+  </div>
+  <div class="cards-grid">
+    <a class="card" href="/olympuspenft.html">
+      <div class="card-img"><img src="/images/weebly/01-journal-ph_orig.jpg" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="card-tag">Camera Review</span>
+        <h3>Olympus Pen FT — The One to Own</h3>
+        <p>A full breakdown of the most capable half frame SLR ever made and why it still holds up.</p>
+      </div>
+    </a>
+    <a class="card" href="/top-3-color-films-for-half-frame.html">
+      <div class="card-img"><img src="/images/weebly/02-journal-ph-jpg_orig.jpg" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="card-tag">Film Guide</span>
+        <h3>Top 3 Color Films for Half Frame</h3>
+        <p>Which emulsions render best in the 18×24mm format — tested and ranked.</p>
+      </div>
+    </a>
+    <a class="card" href="/artistofthemonth.html">
+      <div class="card-img"><img src="/images/weebly/03-journal-ph-jpg_orig.jpg" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="card-tag">Featured Artists</span>
+        <h3>The People Behind the Lens</h3>
+        <p>Ten photographers from around the world shooting half frame film.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+
+<!-- SUBMIT CTA -->
+<div class="submit-cta">
+  <span class="section-label" style="display:block;text-align:center">Open Submissions</span>
+  <h2>Shooting something worth sharing?</h2>
+  <p>HFC was built on community. If you're shooting half frame and making work worth seeing, we want to feature it.</p>
+  <div class="cta-actions">
+    <a href="mailto:halfframeclub@gmail.com" class="btn">Submit Your Work</a>
+    <a href="https://www.instagram.com/halfframeclub/" target="_blank" rel="noopener" class="btn-ghost">Tag #halfframeclub →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club"></div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© HFC 2025 · <a href="#" style="color:inherit;opacity:0.5">Affiliate disclosure</a></div>
+</footer>
+
 </body>
 </html>

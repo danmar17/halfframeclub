@@ -1,0 +1,117 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://halfframeclub.com
+display_url: https://halfframeclub.com
+logo_url: /images/hfc-logo.png
+
+collections:
+  # JOURNAL POSTS
+  - name: "journal"
+    label: "Journal Posts"
+    label_singular: "Journal Post"
+    folder: "journal-posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Dan Marinelli" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Community", value: "community" }
+          - { label: "Featured Artist", value: "featured-artist" }
+          - { label: "Essay", value: "essay" }
+          - { label: "News", value: "news" }
+      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Short summary shown in cards" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # CAMERA REVIEWS
+  - name: "reviews"
+    label: "Camera Reviews"
+    label_singular: "Camera Review"
+    folder: "reviews"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Camera Name", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Dan Marinelli" }
+      - { label: "Camera Type", name: "type_tag", widget: "string", hint: "e.g. Soviet · Full Manual" }
+      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: "Subtitle", name: "subtitle", widget: "text", hint: "One-line description shown under title" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Specs"
+        name: "specs"
+        widget: "list"
+        allow_add: true
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Value", name: "value", widget: "string" }
+      - { label: "eBay Search URL", name: "ebay_url", widget: "string", required: false }
+
+  # FEATURED ARTISTS
+  - name: "artists"
+    label: "Featured Artists"
+    label_singular: "Featured Artist"
+    folder: "artists"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Artist Name", name: "title", widget: "string" }
+      - { label: "Date Featured", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Instagram Handle", name: "instagram", widget: "string" }
+      - { label: "Camera Used", name: "camera", widget: "string" }
+      - { label: "Film Used", name: "film", widget: "string" }
+      - { label: "Card Image", name: "card_image", widget: "image", required: false }
+      - { label: "Intro", name: "intro", widget: "text" }
+      - { label: "Full Interview", name: "body", widget: "markdown" }
+
+  # HOMEPAGE SETTINGS
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "_data/homepage.json"
+        fields:
+          - { label: "Hero Headline", name: "hero_headline", widget: "string", default: "Shoot half. See more." }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
+          - label: "Featured Post 1"
+            name: "featured_1"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+          - label: "Featured Post 2"
+            name: "featured_2"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+          - label: "Featured Post 3"
+            name: "featured_3"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false }
