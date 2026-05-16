@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="featured film photographer, half frame artist, analog photography feature">
+<meta name="description" content="Ten photographers featured since 2018 — from Tokyo to Vienna, Los Angeles to The Hague. All shooting half frame film, all making work worth sharing.">
+<title>Featured Artists — Half Frame Club | Photographers Around the World</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#C9A84C;--teal:#2A7F7F;--black:#0a0a0a;--bg:#F8F5F0;--text:#1a1a1a;--mid:#EDE9E2;--border:rgba(26,26,26,0.1);--border-gold:rgba(201,168,76,0.4)}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);font-weight:300;line-height:1.7;font-size:16px}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(248,245,240,0.95);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--border-gold)}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+  .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+  .nav-links a{font-size:13px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.6;transition:opacity 0.2s,color 0.2s}
+  .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold)}
+  .nav-links a.shop{color:var(--gold);opacity:1}
+  .page-header{padding:6rem 3rem 2.5rem;border-bottom:0.5px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end}
+  .section-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5vw,64px);font-weight:300;line-height:1.02;color:var(--black)}
+  h1 em{font-style:italic;color:var(--gold)}
+  .header-right{font-size:13px;opacity:0.5;line-height:1.85;padding-bottom:0.5rem}
+  .artists-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);padding:3rem;background:var(--bg)}
+  .artist-card{text-decoration:none;color:var(--text);display:block;padding:2rem;border:0.5px solid var(--border);transition:border-color 0.2s,background 0.2s}
+  .artist-card:hover{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.02)}
+  .artist-card:hover .artist-card-name{color:var(--gold)}
+  .artist-card-img{height:200px;background:var(--mid);margin-bottom:1.25rem;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .artist-card-img img{width:100%;height:100%;object-fit:cover}
+  .artist-card-img-placeholder{opacity:0.15;font-size:10px;letter-spacing:0.1em;text-transform:uppercase}
+  .artist-date{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:0.35rem}
+  .artist-card-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--black);margin-bottom:0.25rem;transition:color 0.2s;line-height:1.2}
+  .artist-card-meta{font-size:11px;opacity:0.4;letter-spacing:0.04em;margin-bottom:0.6rem}
+  .artist-card-intro{font-size:12px;opacity:0.55;line-height:1.75}
+  .cta-strip{margin:0 3rem 3rem;border:0.5px solid var(--border-gold);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;background:rgba(201,168,76,0.03)}
+  .cta-text h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:0.3rem;color:var(--black)}
+  .cta-text p{font-size:12px;opacity:0.5;line-height:1.7}
+  .btn-outline{display:inline-block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;padding:0.75rem 1.75rem;border:0.5px solid var(--gold);color:var(--gold);text-decoration:none;background:transparent;transition:background 0.25s,color 0.25s;white-space:nowrap}
+  .btn-outline:hover{background:var(--gold);color:var(--black)}
+  footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border-gold)}
+  .footer-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
+  .footer-copy{font-size:10px;opacity:0.25}
+  @media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{display:none}.page-header{grid-template-columns:1fr;gap:1rem;padding:5.5rem 1.5rem 2rem}.artists-grid{grid-template-columns:1fr;padding:1.5rem}.cta-strip{margin:0 1.5rem 2rem;flex-direction:column;align-items:flex-start}footer{flex-direction:column;gap:1rem;text-align:center}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Featured Artists — Half Frame Club | Photographers Around the World">
+<meta property="og:description" content="Ten photographers featured since 2018 — from Tokyo to Vienna, Los Angeles to The Hague. All shooting half frame film, all making work worth sharing.">
+<meta property="og:site_name" content="Half Frame Club">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Featured Artists — Half Frame Club | Photographers Around the World">
+<meta name="twitter:description" content="Ten photographers featured since 2018 — from Tokyo to Vienna, Los Angeles to The Hague. All shooting half frame film, all making work worth sharing.">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html" class="active">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/shop.html" class="shop">Shop</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div>
+    <div class="section-label">Featured Artists</div>
+    <h1>The People<br><em>Behind the Lens</em></h1>
+  </div>
+  <div class="header-right">
+    Since 2018, HFC has featured photographers from Tokyo to Vienna, Los Angeles to The Hague — all shooting half frame, all making work worth sharing. Ten features and counting.
+  </div>
+</div>
+
+<div class="artists-grid">
+
+  <a class="artist-card" href="/artists/yuki-fukunishi.html">
+    <div class="artist-card-img"><img src="/images/weebly/yuki-unnamed.jpg" alt="Yuki Fukunishi" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">December 2022</div>
+    <div class="artist-card-name">Yuki Fukunishi</div>
+    <div class="artist-card-meta">Tokyo, Japan · Olympus Pen EE3 · Kodak UltraMAX 400</div>
+    <div class="artist-card-intro">Bold contrast and stark composition — like a vertical window peering into another world.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/tony-munoz.html">
+    <div class="artist-card-img"><img src="/images/weebly/image3-1_orig.jpeg" alt="Tony Munoz" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">October 2020</div>
+    <div class="artist-card-name">Tony Munoz</div>
+    <div class="artist-card-meta">Los Angeles, CA · Olympus Pen D · Kodak Gold 200</div>
+    <div class="artist-card-intro">Head of graphics at Vans. Making art out of vintage light catching boxes and the moments that grab his attention.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/pascuela-hernandez.html">
+    <div class="artist-card-img"><img src="/images/weebly/agfa-parat1-fuji-200-03_orig.jpg" alt="Pascal Hernandez" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">August 2020</div>
+    <div class="artist-card-name">Pascal Hernández</div>
+    <div class="artist-card-meta">Valparaiso, Chile · Agfa Parat 1 · Fuji 200</div>
+    <div class="artist-card-intro">Simple gestures that give the sensation of movement. The same model in two places on the same background.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/gabe-vega.html">
+    <div class="artist-card-img"><img src="/images/weebly/dsc09954-edit_orig.jpg" alt="Gabe Vega" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">May 2020</div>
+    <div class="artist-card-name">Gabe Vega</div>
+    <div class="artist-card-meta">Encinitas, CA · Olympus Pen F · Kodak Ultramax 400</div>
+    <div class="artist-card-intro">DJ, photographer, Shiba Inu dad. Images that tell a story through content or tone — something that catches the eye.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/brian-macalister.html">
+    <div class="artist-card-img"><img src="/images/weebly/img-2608_orig.jpg" alt="Brian MacAlister" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">December 2019</div>
+    <div class="artist-card-name">Brian MacAlister</div>
+    <div class="artist-card-meta">Canberra, Australia · Olympus Pen EE · Portra 160/400</div>
+    <div class="artist-card-intro">Former chef turned photographer. Always looking for something that connects the two frames.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/philip-antonopoulos.html">
+    <div class="artist-card-img"><img src="/images/weebly/unnamed-11_orig.jpg" alt="Philip Antonopoulos" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">May 2019</div>
+    <div class="artist-card-name">Philip Antonopoulos</div>
+    <div class="artist-card-meta">Brisbane, Australia · Olympus Pen FT · Various</div>
+    <div class="artist-card-intro">22 years on film. The Pen FT is his favorite — 72 frames makes him think less and shoot more.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/sarah-prins.html">
+    <div class="artist-card-img"><img src="/images/weebly/img-20190228-200748-698_orig.jpg" alt="Sarah Prins" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">March 2019</div>
+    <div class="artist-card-name">Sarah Prins</div>
+    <div class="artist-card-meta">The Hague, Netherlands · Olympus Pen EE3 · Ektar 100</div>
+    <div class="artist-card-intro">Short stories in series of three — triptychs out of diptychs. Felt like a big cheater before she went fully analog.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/mike-dinsmore.html">
+    <div class="artist-card-img"><img src="/images/weebly/mikedinsmore-181211-1666_orig.jpg" alt="Mike Dinsmore" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">January 2019</div>
+    <div class="artist-card-name">Mike Dinsmore</div>
+    <div class="artist-card-meta">Osaka, Japan · Olympus Pen D F1.9 · Tri-X 400</div>
+    <div class="artist-card-intro">Walking Japanese neighborhoods in the mornings with a camera nobody notices. Documentary at its quietest.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/sebastian-binder.html">
+    <div class="artist-card-img"><img src="/images/weebly/201810-sebastianbinderphoto-penft-hp5-womanandshadow-vienna_orig.jpg" alt="Sebastian Binder" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">November 2018</div>
+    <div class="artist-card-name">Sebastian Binder</div>
+    <div class="artist-card-meta">Vienna, Austria · Olympus Pen FT · Ilford HP5+</div>
+    <div class="artist-card-intro">High contrast B&W — street, portraiture, skate action, architecture. Already distinctive enough to recognize.</div>
+  </a>
+
+  <a class="artist-card" href="/artists/adam-clitheroe.html">
+    <div class="artist-card-img"><img src="/images/weebly/adamclitheroe-britishparanoia-hfc-010_orig.jpg" alt="Adam Clitheroe" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="artist-date">September 2018</div>
+    <div class="artist-card-name">Adam Clitheroe</div>
+    <div class="artist-card-meta">United Kingdom · Fujica Drive · Ilford Delta 400</div>
+    <div class="artist-card-intro">British Paranoia — a sketchbook of modern Britain shot on clockwork Fujica Drives during Brexit.</div>
+  </a>
+
+</div>
+
+<div class="cta-strip">
+  <div class="cta-text">
+    <h3>Want to be featured?</h3>
+    <p>HFC is always looking for half frame photographers doing interesting work. Get in touch.</p>
+  </div>
+  <a class="btn-outline" href="/contact.html">Submit Your Work →</a>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
+  <div class="footer-copy">© HFC 2025</div>
+</footer>
+</body>
+</html>

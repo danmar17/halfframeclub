@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="diptych maker, half frame diptych, square fit instagram, film photo tools">
+<meta name="description" content="Free browser-based tools for half frame photographers. Create diptychs, add square mattes for Instagram, and batch optimize images — all processed locally in your browser.">
+<title>HFC Darkroom — Free Half Frame Photography Tools</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --teal: #2A7F7F;
+    --black: #0a0a0a;
+    --bg: #F8F5F0;
+    --text: #1a1a1a;
+    --mid: #EDE9E2;
+    --border: rgba(26,26,26,0.12);
+    --border-gold: rgba(201,168,76,0.4);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); font-weight: 300; line-height: 1.7; font-size: 16px; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(248,245,240,0.95); backdrop-filter: blur(10px); border-bottom: 0.5px solid var(--border-gold); }
+  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.6; transition: opacity 0.2s, color 0.2s; white-space: nowrap; }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-links a.active { opacity: 1; color: var(--teal); }
+  .nav-links a.shop { color: var(--gold); opacity: 0.9; }
+  .nav-right { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); text-decoration: none; opacity: 0.75; flex-shrink: 0; }
+  .nav-right:hover { opacity: 1; }
+  .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
+  .btn { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.85rem 2rem; border: 0.5px solid var(--gold); color: var(--gold); text-decoration: none; background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; }
+  .btn:hover { background: var(--gold); color: var(--black); }
+  footer { padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border-gold); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; }
+  .footer-links { display: flex; gap: 1.75rem; list-style: none; }
+  .footer-links a { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.35; transition: opacity 0.2s; }
+  .footer-links a:hover { opacity: 0.8; }
+  .footer-copy { font-size: 11px; opacity: 0.3; }
+  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } footer { flex-direction: column; gap: 1.25rem; text-align: center; } .footer-links { flex-wrap: wrap; justify-content: center; } }
+
+  .page-header { padding: 7rem 3rem 2.5rem; border-bottom: 0.5px solid var(--border); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px,5vw,62px); font-weight: 300; line-height: 1.05; margin-bottom: 0.75rem; color: var(--black); }
+  h1 em { font-style: italic; color: var(--gold); }
+  .page-sub { font-size: 15px; opacity: 0.55; line-height: 1.85; max-width: 520px; }
+  .tabs { display: flex; border-bottom: 0.5px solid var(--border); padding: 0 3rem; }
+  .tab { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.9rem 1.5rem; cursor: pointer; opacity: 0.45; border: none; background: none; color: var(--text); border-bottom: 1.5px solid transparent; margin-bottom: -0.5px; font-family: 'Jost', sans-serif; transition: opacity 0.2s; white-space: nowrap; }
+  .tab:hover { opacity: 0.8; }
+  .tab.active { opacity: 1; color: var(--gold); border-bottom-color: var(--gold); }
+  .panel { display: none; padding: 3rem; max-width: 960px; }
+  .panel.active { display: block; }
+  .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+  .col-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; display: block; }
+  .drop-zone { border: 0.5px dashed rgba(26,26,26,0.25); padding: 2rem 1rem; text-align: center; cursor: pointer; position: relative; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; transition: border-color 0.2s, background 0.2s; }
+  .drop-zone:hover, .drop-zone.dragover { border-color: var(--gold); background: rgba(201,168,76,0.03); }
+  .drop-zone input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+  .drop-icon { font-size: 24px; opacity: 0.2; }
+  .drop-text { font-size: 13px; opacity: 0.45; letter-spacing: 0.04em; }
+  .drop-name { font-size: 12px; color: var(--gold); letter-spacing: 0.04em; word-break: break-all; display: none; }
+  .controls { margin-top: 1.5rem; }
+  .control-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; gap: 1rem; }
+  .control-label { font-size: 13px; opacity: 0.55; white-space: nowrap; }
+  input[type=range] { flex: 1; accent-color: var(--gold); cursor: pointer; }
+  .val { font-size: 12px; color: var(--gold); min-width: 40px; text-align: right; }
+  .check-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; cursor: pointer; }
+  .check-row input { accent-color: var(--gold); cursor: pointer; width: 14px; height: 14px; }
+  .check-label { font-size: 13px; opacity: 0.6; }
+  .tool-btn { display: block; width: 100%; padding: 0.9rem; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; border: 0.5px solid var(--gold); color: var(--gold); background: transparent; cursor: pointer; margin-top: 1.5rem; transition: background 0.2s, color 0.2s; }
+  .tool-btn:hover { background: var(--gold); color: var(--black); }
+  .tool-btn.teal { border-color: var(--teal); color: var(--teal); }
+  .tool-btn.teal:hover { background: var(--teal); color: #fff; }
+  .tool-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .output { margin-top: 1.5rem; border-top: 0.5px solid var(--border); padding-top: 1.5rem; display: none; }
+  .output canvas { width: 100%; display: block; border: 0.5px solid var(--border); }
+  .note { font-size: 12px; opacity: 0.35; line-height: 1.6; margin-top: 0.75rem; }
+  .full { grid-column: 1 / -1; }
+  select { background: var(--bg); border: 0.5px solid rgba(26,26,26,0.2); color: var(--text); padding: 0.5rem 0.75rem; font-family: 'Jost', sans-serif; font-size: 13px; flex: 1; cursor: pointer; }
+  select:focus { outline: none; border-color: var(--gold); }
+  .batch-list { margin-top: 1rem; max-height: 220px; overflow-y: auto; }
+  .batch-item { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); font-size: 13px; }
+  .batch-item-name { opacity: 0.6; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 1rem; }
+  .batch-item-size { color: var(--teal); white-space: nowrap; }
+  .batch-item-status { font-size: 11px; color: var(--gold); margin-left: 0.75rem; min-width: 60px; text-align: right; }
+  .progress { height: 2px; background: rgba(26,26,26,0.1); margin-top: 1rem; overflow: hidden; display: none; }
+  .progress-bar { height: 100%; background: var(--gold); width: 0; transition: width 0.3s; }
+  .empty-preview { border: 0.5px dashed rgba(26,26,26,0.15); min-height: 200px; display: flex; align-items: center; justify-content: center; }
+  .empty-preview span { font-size: 13px; opacity: 0.25; letter-spacing: 0.06em; }
+  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-header { padding: 5.5rem 1.5rem 2rem; } .tabs { padding: 0 1.5rem; } .panel { padding: 2rem 1.5rem; } .tool-grid { grid-template-columns: 1fr; } }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="HFC Darkroom — Free Half Frame Photography Tools">
+<meta property="og:description" content="Free browser-based tools for half frame photographers. Create diptychs, add square mattes for Instagram, and batch optimize images — all processed locally in your browser.">
+<meta property="og:site_name" content="Half Frame Club">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HFC Darkroom — Free Half Frame Photography Tools">
+<meta name="twitter:description" content="Free browser-based tools for half frame photographers. Create diptychs, add square mattes for Instagram, and batch optimize images — all processed locally in your browser.">
+</head>
+<body>
+<nav><a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li><li><a href="/journal.html">Journal</a></li><li><a href="/darkroom.html" class="active">Darkroom</a></li><li><a href="/shop.html" class="shop">Shop</a></li></ul><a class="nav-right" href="/">← Home</a></nav>
+<div class="page-header">
+  <span class="section-label">HFC Darkroom</span>
+  <h1>Digital <em>Lab</em></h1>
+  <p class="page-sub">Free browser-based tools for half frame photographers. All processing happens locally — your images are never uploaded to any server.</p>
+</div>
+<div class="tabs">
+  <button class="tab active" data-tab="diptych">01 · Diptych Maker</button>
+  <button class="tab" data-tab="squarefit">02 · Square Fit</button>
+  <button class="tab" data-tab="batch">03 · Batch Crunch</button>
+</div>
+<div class="panel active" id="tab-diptych">
+  <div class="tool-grid">
+    <div>
+      <span class="col-label">Left Frame</span>
+      <div class="drop-zone"><input type="file" accept="image/*" id="file-left"><div class="drop-icon">⬚</div><div class="drop-text" id="left-text">Drop or click to upload</div><div class="drop-name" id="left-name"></div></div>
+    </div>
+    <div>
+      <span class="col-label">Right Frame</span>
+      <div class="drop-zone"><input type="file" accept="image/*" id="file-right"><div class="drop-icon">⬚</div><div class="drop-text" id="right-text">Drop or click to upload</div><div class="drop-name" id="right-name"></div></div>
+    </div>
+    <div class="full">
+      <div class="controls">
+        <div class="control-row"><span class="control-label">Outer border</span><input type="range" id="dip-border" min="0" max="120" value="60" step="4"><span class="val" id="dip-border-val">60px</span></div>
+        <div class="control-row"><span class="control-label">Gap between frames</span><input type="range" id="dip-gap" min="0" max="60" value="12" step="2"><span class="val" id="dip-gap-val">12px</span></div>
+        <div class="control-row"><span class="control-label">Background</span><select id="dip-bg"><option value="#ffffff">White</option><option value="#F8F5F0">Cream</option><option value="#0a0a0a">Black</option><option value="#C9A84C">Gold</option></select></div>
+        <label class="check-row"><input type="checkbox" id="dip-brand" checked><span class="check-label">Include HFC branding</span></label>
+        <label class="check-row"><input type="checkbox" id="dip-film"><span class="check-label">Film border style</span></label>
+      </div>
+      <button class="tool-btn" id="dip-process">Process Diptych</button>
+      <div class="output" id="dip-output"><span class="col-label">Output</span><canvas id="dip-canvas"></canvas><button class="tool-btn teal" id="dip-download" style="margin-top:1rem">Download Diptych</button><p class="note">Saved as PNG · Processing done entirely in your browser</p></div>
+    </div>
+  </div>
+</div>
+<div class="panel" id="tab-squarefit">
+  <div class="tool-grid">
+    <div>
+      <span class="col-label">Upload Image</span>
+      <div class="drop-zone"><input type="file" accept="image/*" id="sq-file"><div class="drop-icon">⬚</div><div class="drop-text" id="sq-text">Drop or click to upload</div><div class="drop-name" id="sq-name"></div></div>
+      <div class="controls">
+        <div class="control-row"><span class="control-label">Matte padding</span><input type="range" id="sq-pad" min="0" max="300" value="100" step="10"><span class="val" id="sq-pad-val">100px</span></div>
+        <div class="control-row"><span class="control-label">Matte color</span><select id="sq-bg"><option value="#ffffff">White</option><option value="#F8F5F0">Cream</option><option value="#0a0a0a">Black</option></select></div>
+      </div>
+      <button class="tool-btn" id="sq-process">Process Square</button>
+    </div>
+    <div>
+      <span class="col-label">Preview</span>
+      <div class="output" id="sq-output"><canvas id="sq-canvas"></canvas><button class="tool-btn teal" id="sq-download" style="margin-top:1rem">Download Square</button><p class="note">1:1 ratio · Ready for Instagram</p></div>
+      <div class="empty-preview" id="sq-empty"><span>Preview appears here</span></div>
+    </div>
+  </div>
+</div>
+<div class="panel" id="tab-batch">
+  <div class="tool-grid">
+    <div>
+      <span class="col-label">Upload Files (max 20)</span>
+      <div class="drop-zone"><input type="file" accept="image/*" multiple id="batch-file"><div class="drop-icon">⬚</div><div class="drop-text">Drop up to 20 images or click to select</div></div>
+      <div class="controls">
+        <div class="control-row"><span class="control-label">Target max size</span><select id="batch-size"><option value="2097152">2 MB</option><option value="1048576">1 MB</option><option value="524288">500 KB</option></select></div>
+        <div class="control-row"><span class="control-label">Output format</span><select id="batch-fmt"><option value="jpeg">JPEG</option><option value="webp">WebP</option></select></div>
+      </div>
+      <button class="tool-btn" id="batch-process" disabled>Optimize All</button>
+      <div class="progress" id="batch-progress"><div class="progress-bar" id="batch-bar"></div></div>
+    </div>
+    <div>
+      <span class="col-label">Queue</span>
+      <div class="batch-list" id="batch-list"><div style="font-size:13px;opacity:0.25;padding:1rem 0;text-align:center">No files added yet</div></div>
+      <p class="note" style="margin-top:1rem">Files are compressed client-side and downloaded individually. Nothing leaves your device.</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© HFC 2025 · <a href="#" style="color:inherit;opacity:0.5">Affiliate disclosure</a></div>
+</footer>
+<script>
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById('tab-' + t.dataset.tab).classList.add('active');
+}));
+function liveSlider(id, outId, suffix) {
+  const s = document.getElementById(id), o = document.getElementById(outId);
+  s.addEventListener('input', () => o.textContent = s.value + suffix);
+}
+liveSlider('dip-border','dip-border-val','px');
+liveSlider('dip-gap','dip-gap-val','px');
+liveSlider('sq-pad','sq-pad-val','px');
+function loadImg(file) { return new Promise(res => { const r = new FileReader(); r.onload = e => { const i = new Image(); i.onload = () => res(i); i.src = e.target.result; }; r.readAsDataURL(file); }); }
+let leftImg = null, rightImg = null;
+document.getElementById('file-left').addEventListener('change', async e => { if (!e.target.files[0]) return; leftImg = await loadImg(e.target.files[0]); document.getElementById('left-text').style.display='none'; const n=document.getElementById('left-name'); n.textContent=e.target.files[0].name; n.style.display='block'; });
+document.getElementById('file-right').addEventListener('change', async e => { if (!e.target.files[0]) return; rightImg = await loadImg(e.target.files[0]); document.getElementById('right-text').style.display='none'; const n=document.getElementById('right-name'); n.textContent=e.target.files[0].name; n.style.display='block'; });
+document.getElementById('dip-process').addEventListener('click', () => {
+  if (!leftImg || !rightImg) { alert('Please upload both frames first.'); return; }
+  const border=parseInt(document.getElementById('dip-border').value), gap=parseInt(document.getElementById('dip-gap').value), bg=document.getElementById('dip-bg').value, brand=document.getElementById('dip-brand').checked, film=document.getElementById('dip-film').checked;
+  const h=900, lw=Math.round(leftImg.width*h/leftImg.height), rw=Math.round(rightImg.width*h/rightImg.height);
+  const cw=border*2+lw+gap+rw, ch=border*2+h+(brand?44:0);
+  const c=document.getElementById('dip-canvas'); c.width=cw; c.height=ch;
+  const ctx=c.getContext('2d'); ctx.fillStyle=bg; ctx.fillRect(0,0,cw,ch);
+  if (film) { ctx.fillStyle='rgba(0,0,0,0.07)'; for (let y=border+8;y<border+h-20;y+=30) { ctx.fillRect(border-18,y,12,20); ctx.fillRect(cw-border+6,y,12,20); } }
+  ctx.drawImage(leftImg,border,border,lw,h); ctx.drawImage(rightImg,border+lw+gap,border,rw,h);
+  if (brand) { ctx.fillStyle='rgba(201,168,76,0.7)'; ctx.font='400 11px Jost,sans-serif'; ctx.textAlign='center'; ctx.fillText('HALF FRAME CLUB',cw/2,ch-16); }
+  document.getElementById('dip-output').style.display='block';
+});
+document.getElementById('dip-download').addEventListener('click', () => { const a=document.createElement('a'); a.download='hfc-diptych.png'; a.href=document.getElementById('dip-canvas').toDataURL(); a.click(); });
+let sqImg=null;
+document.getElementById('sq-file').addEventListener('change', async e => { if (!e.target.files[0]) return; sqImg=await loadImg(e.target.files[0]); document.getElementById('sq-text').style.display='none'; const n=document.getElementById('sq-name'); n.textContent=e.target.files[0].name; n.style.display='block'; renderSquare(); });
+document.getElementById('sq-pad').addEventListener('input', () => { if (sqImg) renderSquare(); });
+document.getElementById('sq-bg').addEventListener('change', () => { if (sqImg) renderSquare(); });
+document.getElementById('sq-process').addEventListener('click', () => { if (sqImg) renderSquare(); else alert('Please upload an image first.'); });
+function renderSquare() { const pad=parseInt(document.getElementById('sq-pad').value), bg=document.getElementById('sq-bg').value, size=Math.max(sqImg.width,sqImg.height)+pad*2; const c=document.getElementById('sq-canvas'); c.width=size; c.height=size; const ctx=c.getContext('2d'); ctx.fillStyle=bg; ctx.fillRect(0,0,size,size); ctx.drawImage(sqImg,(size-sqImg.width)/2,(size-sqImg.height)/2); document.getElementById('sq-output').style.display='block'; document.getElementById('sq-empty').style.display='none'; }
+document.getElementById('sq-download').addEventListener('click', () => { const a=document.createElement('a'); a.download='hfc-square.png'; a.href=document.getElementById('sq-canvas').toDataURL(); a.click(); });
+let batchFiles=[];
+document.getElementById('batch-file').addEventListener('change', e => {
+  batchFiles=Array.from(e.target.files).slice(0,20);
+  const list=document.getElementById('batch-list'); list.innerHTML='';
+  batchFiles.forEach(f => { const el=document.createElement('div'); el.className='batch-item'; const sid='bs-'+Math.random().toString(36).substr(2,8); el.innerHTML=`<span class="batch-item-name">${f.name}</span><span class="batch-item-size">${(f.size/1024).toFixed(0)} KB</span><span class="batch-item-status" id="${sid}">Queued</span>`; f._sid=sid; list.appendChild(el); });
+  document.getElementById('batch-process').disabled=batchFiles.length===0;
+});
+document.getElementById('batch-process').addEventListener('click', async () => {
+  const maxSize=parseInt(document.getElementById('batch-size').value), fmt=document.getElementById('batch-fmt').value;
+  const prog=document.getElementById('batch-progress'), bar=document.getElementById('batch-bar');
+  prog.style.display='block'; bar.style.width='0%';
+  for (let i=0;i<batchFiles.length;i++) {
+    const f=batchFiles[i], statusEl=document.getElementById(f._sid);
+    if (statusEl) statusEl.textContent='Processing…';
+    const img=await loadImg(f); const c=document.createElement('canvas');
+    let q=0.88, scale=1, blob;
+    for (let a=0;a<10;a++) { c.width=Math.round(img.width*scale); c.height=Math.round(img.height*scale); c.getContext('2d').drawImage(img,0,0,c.width,c.height); blob=await new Promise(r=>c.toBlob(r,'image/'+fmt,q)); if (blob.size<=maxSize) break; if (q>0.4) q-=0.08; else scale=Math.max(0.3,scale-0.1); }
+    const url=URL.createObjectURL(blob), a=document.createElement('a'); a.href=url; a.download=f.name.replace(/\.[^.]+$/,'')+'-opt.'+(fmt==='jpeg'?'jpg':'webp'); a.click(); URL.revokeObjectURL(url);
+    if (statusEl) { statusEl.textContent=(blob.size/1024).toFixed(0)+' KB ✓'; statusEl.style.color='var(--teal)'; }
+    bar.style.width=((i+1)/batchFiles.length*100)+'%';
+    await new Promise(r=>setTimeout(r,150));
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="half frame club merch, film photography shop, analog photography apparel">
+<meta name="description" content="Half Frame Club merchandise, print-on-demand apparel, and digital guides for film photographers.">
+<title>Shop — Half Frame Club Merch & Guides</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#C9A84C;--teal:#2A7F7F;--black:#0a0a0a;--white:#F5F2EC;--bg:#F8F5F0;--text:#1a1a1a;--mid:#EDE9E2;--border:rgba(26,26,26,0.1);--border-gold:rgba(201,168,76,0.4)}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);font-weight:300;line-height:1.7;font-size:16px}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(248,245,240,0.95);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--border-gold)}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+  .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+  .nav-links a{font-size:13px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.6;transition:opacity 0.2s,color 0.2s}
+  .nav-links a:hover{opacity:1;color:var(--gold)}
+  .nav-links a.shop{color:var(--gold);opacity:1}
+  .page-header{padding:6rem 3rem 2.5rem;border-bottom:0.5px solid var(--border)}
+  .section-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5vw,64px);font-weight:300;line-height:1.02;margin-bottom:0.75rem;color:var(--black)}
+  h1 em{font-style:italic;color:var(--gold)}
+  .header-sub{font-size:13px;opacity:0.5;max-width:500px;line-height:1.85}
+  .shop-section{padding:4rem 3rem;border-bottom:0.5px solid var(--border)}
+  .shop-section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem}
+  .shop-section-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--black)}
+  .shop-section-note{font-size:11px;opacity:0.4;letter-spacing:0.04em}
+  /* Shopify buy button container */
+  .shopify-section{padding:0 3rem 4rem}
+  .shopify-placeholder{border:0.5px dashed var(--border-gold);padding:3rem;text-align:center;background:rgba(201,168,76,0.02);margin-bottom:2rem}
+  .shopify-placeholder-icon{font-size:32px;margin-bottom:1rem;opacity:0.3}
+  .shopify-placeholder h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:0.5rem;color:var(--black)}
+  .shopify-placeholder p{font-size:12px;opacity:0.45;margin-bottom:1.5rem;line-height:1.7}
+  .shopify-placeholder code{font-size:11px;background:var(--mid);padding:0.25rem 0.5rem;letter-spacing:0.04em;opacity:0.6}
+  /* Product grid (static preview) */
+  .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+  .product-card{text-decoration:none;color:var(--text);display:block}
+  .product-card:hover .product-name{color:var(--gold)}
+  .product-img{background:var(--mid);aspect-ratio:1/1;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+  .product-img img{width:100%;height:100%;object-fit:cover}
+  .product-img-placeholder{opacity:0.15;text-align:center}
+  .product-img-placeholder svg{width:32px;height:32px;display:block;margin:0 auto 0.5rem}
+  .product-img-placeholder span{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;display:block}
+  .product-tag{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.3rem}
+  .product-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;margin-bottom:0.3rem;color:var(--black);transition:color 0.2s;line-height:1.3}
+  .product-price{font-size:12px;color:var(--gold);letter-spacing:0.06em}
+  /* Coming soon */
+  .coming-soon{background:var(--mid);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;margin-top:2rem}
+  .coming-soon-text h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;margin-bottom:0.3rem;color:var(--black)}
+  .coming-soon-text p{font-size:12px;opacity:0.5;line-height:1.7;font-size:16px}
+  .btn-outline{display:inline-block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;padding:0.75rem 1.75rem;border:0.5px solid var(--gold);color:var(--gold);text-decoration:none;background:transparent;transition:background 0.25s,color 0.25s;white-space:nowrap}
+  .btn-outline:hover{background:var(--gold);color:var(--black)}
+  .printify-note{font-size:11px;opacity:0.35;margin-top:1.5rem;line-height:1.7;padding-top:1.5rem;border-top:0.5px solid var(--border)}
+  footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border-gold)}
+  .footer-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
+  .footer-links{display:flex;gap:2rem;list-style:none}
+  .footer-links a{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.3;transition:opacity 0.2s}
+  .footer-links a:hover{opacity:0.8}
+  .footer-copy{font-size:10px;opacity:0.25}
+  @media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{display:none}.page-header{padding:5.5rem 1.5rem 2rem}.shop-section{padding:3rem 1.5rem}.shopify-section{padding:0 1.5rem 3rem}.products-grid{grid-template-columns:1fr 1fr}.coming-soon{flex-direction:column;align-items:flex-start}footer{flex-direction:column;gap:1rem;text-align:center}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shop — Half Frame Club Merch & Guides">
+<meta property="og:description" content="Half Frame Club merchandise, print-on-demand apparel, and digital guides for film photographers.">
+<meta property="og:site_name" content="Half Frame Club">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shop — Half Frame Club Merch & Guides">
+<meta name="twitter:description" content="Half Frame Club merchandise, print-on-demand apparel, and digital guides for film photographers.">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot & Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/shop.html" class="shop">Shop</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">HFC Shop</div>
+  <h1>Merch, Guides<br>& <em>Prints</em></h1>
+  <p class="header-sub">Print-on-demand merch fulfilled by Printify. Digital guides coming soon. Everything ships worldwide.</p>
+</div>
+
+<!-- SHOPIFY BUY BUTTONS GO HERE -->
+<div class="shopify-section" style="padding-top:3rem">
+
+  <!-- ============================================================
+       SHOPIFY BUY BUTTON EMBED ZONE
+       Replace the placeholder div below with your Shopify
+       Buy Button embed code from your Shopify Starter dashboard.
+
+       To get your embed code:
+       1. Log into your Shopify admin
+       2. Go to Sales Channels > Buy Button
+       3. Create a collection button for your HFC products
+       4. Copy the embed code and paste it here in place of the
+          .shopify-placeholder div below
+  ============================================================ -->
+
+  <div class="shopify-placeholder">
+    <div class="shopify-placeholder-icon">🛍</div>
+    <h3>Shopify Buy Button Goes Here</h3>
+    <p>Paste your Shopify Buy Button embed code in place of this block.<br>Products are fulfilled via Printify — no inventory required.</p>
+    <code>&lt;!-- Shopify Buy Button embed code --&gt;</code>
+  </div>
+
+  <!-- STATIC PRODUCT PREVIEW (shown until Shopify is connected) -->
+  <div class="shop-section-header">
+    <div class="shop-section-title">Available Now</div>
+    <div class="shop-section-note">Fulfilled via Printify · Ships worldwide</div>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-placeholder">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1"><rect x="4" y="4" width="24" height="24" rx="2"/><path d="M4 12h24"/><circle cx="10" cy="8" r="1.5" fill="currentColor"/><circle cx="16" cy="8" r="1.5" fill="currentColor"/></svg>
+          <span>Add product image</span>
+        </div>
+      </div>
+      <div class="product-tag">Apparel</div>
+      <div class="product-name">HFC Logo Tee</div>
+      <div class="product-price">From $28</div>
+    </div>
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-placeholder">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1"><rect x="4" y="4" width="24" height="24" rx="2"/><path d="M4 12h24"/><circle cx="10" cy="8" r="1.5" fill="currentColor"/><circle cx="16" cy="8" r="1.5" fill="currentColor"/></svg>
+          <span>Add product image</span>
+        </div>
+      </div>
+      <div class="product-tag">Apparel</div>
+      <div class="product-name">HFC Hoodie</div>
+      <div class="product-price">From $52</div>
+    </div>
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-placeholder">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1"><rect x="4" y="4" width="24" height="24" rx="2"/><path d="M4 12h24"/><circle cx="10" cy="8" r="1.5" fill="currentColor"/><circle cx="16" cy="8" r="1.5" fill="currentColor"/></svg>
+          <span>Add product image</span>
+        </div>
+      </div>
+      <div class="product-tag">Accessories</div>
+      <div class="product-name">HFC Tote Bag</div>
+      <div class="product-price">From $22</div>
+    </div>
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-placeholder">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1"><rect x="4" y="4" width="24" height="24" rx="2"/><path d="M4 12h24"/><circle cx="10" cy="8" r="1.5" fill="currentColor"/><circle cx="16" cy="8" r="1.5" fill="currentColor"/></svg>
+          <span>Add product image</span>
+        </div>
+      </div>
+      <div class="product-tag">Accessories</div>
+      <div class="product-name">HFC Sticker Pack</div>
+      <div class="product-price">From $8</div>
+    </div>
+  </div>
+
+  <div class="coming-soon">
+    <div class="coming-soon-text">
+      <h3>PDF Guide — Coming Soon</h3>
+      <p>A comprehensive guide to buying, shooting, and loving half frame film cameras. Everything in one place.</p>
+    </div>
+    <a class="btn-outline" href="/contact.html">Get Notified →</a>
+  </div>
+
+  <p class="printify-note">All apparel and accessories are printed on demand and fulfilled by Printify. No inventory is held. Orders ship directly from the printer to you. Questions about an order? <a href="mailto:halfframeclub@gmail.com" style="color:var(--teal);text-decoration:none">Get in touch</a>.</p>
+
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
+  <ul class="footer-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot & Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© HFC 2025</div>
+</footer>
+</body>
+</html>

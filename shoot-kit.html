@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="half frame camera reviews, olympus pen review, yashica samurai, canon demi, best film for half frame">
+<meta name="description" content="In-depth reviews of 14 half frame cameras including the Olympus Pen series, Yashica Samurai, Canon Demi, Agat 18k, and RETO Kodak H35. Plus the best film for half frame photography.">
+<title>Camera Reviews & Film Guides — Half Frame Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --teal: #2A7F7F;
+    --black: #0a0a0a;
+    --bg: #F8F5F0;
+    --text: #1a1a1a;
+    --mid: #EDE9E2;
+    --border: rgba(26,26,26,0.12);
+    --border-gold: rgba(201,168,76,0.4);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); font-weight: 300; line-height: 1.7; font-size: 16px; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(248,245,240,0.95); backdrop-filter: blur(10px); border-bottom: 0.5px solid var(--border-gold); }
+  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.6; transition: opacity 0.2s, color 0.2s; white-space: nowrap; }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-links a.active { opacity: 1; color: var(--teal); }
+  .nav-links a.shop { color: var(--gold); opacity: 0.9; }
+  .nav-right { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); text-decoration: none; opacity: 0.75; flex-shrink: 0; }
+  .nav-right:hover { opacity: 1; }
+  .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
+  .btn { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.85rem 2rem; border: 0.5px solid var(--gold); color: var(--gold); text-decoration: none; background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; }
+  .btn:hover { background: var(--gold); color: var(--black); }
+  footer { padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border-gold); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; }
+  .footer-links { display: flex; gap: 1.75rem; list-style: none; }
+  .footer-links a { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.35; transition: opacity 0.2s; }
+  .footer-links a:hover { opacity: 0.8; }
+  .footer-copy { font-size: 11px; opacity: 0.3; }
+  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } footer { flex-direction: column; gap: 1.25rem; text-align: center; } .footer-links { flex-wrap: wrap; justify-content: center; } }
+
+  .page-header { padding: 6rem 3rem 2.5rem; border-bottom: 0.5px solid var(--border); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px,5vw,62px); font-weight: 300; line-height: 1.05; margin-bottom: 0.75rem; color: var(--black); }
+  h1 em { font-style: italic; color: var(--gold); }
+  .page-sub { font-size: 15px; opacity: 0.55; line-height: 1.85; max-width: 520px; }
+  .filter-bar { display: flex; border-bottom: 0.5px solid var(--border); padding: 0 3rem; overflow-x: auto; }
+  .filter-btn { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 1rem 1.5rem; cursor: pointer; opacity: 0.45; border: none; background: none; color: var(--text); border-bottom: 1.5px solid transparent; margin-bottom: -0.5px; white-space: nowrap; font-family: 'Jost', sans-serif; transition: opacity 0.2s; }
+  .filter-btn:hover { opacity: 0.8; }
+  .filter-btn.active { opacity: 1; color: var(--gold); border-bottom-color: var(--gold); }
+  .content-section { padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
+  .content-section.hidden { display: none; }
+  .sub-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; display: block; }
+  .sub-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; margin-bottom: 0.75rem; color: var(--black); }
+  .sub-desc { font-size: 15px; opacity: 0.5; max-width: 560px; line-height: 1.8; margin-bottom: 3rem; }
+  .cameras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .camera-card { border: 0.5px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
+  .camera-card:hover { border-color: var(--border-gold); }
+  .camera-card.featured { grid-column: span 2; }
+  .camera-card-img { height: 200px; background: var(--mid); border-bottom: 0.5px solid var(--border); overflow: hidden; }
+  .camera-card.featured .camera-card-img { height: 240px; }
+  .camera-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
+  .camera-card:hover .camera-card-img img { transform: scale(1.03); }
+  .camera-card-img svg { width: 32px; height: 32px; opacity: 0.1; }
+  .camera-card-body { padding: 1.25rem 1.5rem 1.5rem; }
+  .camera-type-tag { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
+  .camera-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; line-height: 1.2; margin-bottom: 0.5rem; color: var(--black); }
+  .camera-card.featured h3 { font-size: 26px; }
+  .camera-card-excerpt { font-size: 14px; opacity: 0.5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .camera-card-meta { display: flex; justify-content: space-between; align-items: center; }
+  .camera-card-specs { font-size: 11px; opacity: 0.35; }
+  .camera-card-link { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); opacity: 0.7; }
+  .camera-card:hover .camera-card-link { opacity: 1; }
+  .film-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .film-card { border: 0.5px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; padding: 2.5rem; position: relative; }
+  .film-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--teal); opacity: 0.5; }
+  .film-card:first-child::before { background: var(--gold); opacity: 0.7; }
+  .film-card:hover { border-color: var(--border-gold); }
+  .film-medal { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: block; }
+  .film-card:last-child .film-medal { color: var(--teal); }
+  .film-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; line-height: 1.2; margin-bottom: 1rem; color: var(--black); }
+  .film-card-excerpt { font-size: 14px; opacity: 0.5; line-height: 1.8; margin-bottom: 1.5rem; }
+  .film-top-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 1rem; background: rgba(26,26,26,0.04); border: 0.5px solid var(--border); margin-bottom: 0.5rem; }
+  .film-top-num { font-size: 9px; color: var(--gold); letter-spacing: 0.1em; min-width: 20px; }
+  .film-top-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--black); }
+  .film-top-note { font-size: 10px; opacity: 0.35; margin-left: auto; }
+  .film-cta { font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--teal); opacity: 0.75; display: block; margin-top: 1.25rem; }
+  .guide-feature { background: var(--mid); padding: 3rem; margin-top: 1.5rem; position: relative; }
+  .guide-feature::before { content: ''; position: absolute; top: 0; left: 3rem; right: 3rem; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); opacity: 0.4; }
+  .guide-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+  .guide-inner h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; margin-bottom: 0.75rem; color: var(--black); }
+  .guide-inner p { font-size: 14px; opacity: 0.55; line-height: 1.8; margin-bottom: 1rem; }
+  .pen-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+  .pen-item { padding: 0.6rem 0.75rem; border: 0.5px solid var(--border); background: var(--bg); }
+  .pen-cat { font-size: 9px; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .pen-name { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 400; color: var(--black); }
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+    .page-header { padding: 5.5rem 1.5rem 2rem; }
+    .filter-bar { padding: 0 1.5rem; }
+    .content-section { padding: 3rem 1.5rem; }
+    .cameras-grid { grid-template-columns: 1fr; }
+    .camera-card.featured { grid-column: span 1; }
+    .film-grid { grid-template-columns: 1fr; }
+    .guide-inner { grid-template-columns: 1fr; }
+    .pen-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Camera Reviews & Film Guides — Half Frame Club">
+<meta property="og:description" content="In-depth reviews of 14 half frame cameras including the Olympus Pen series, Yashica Samurai, Canon Demi, Agat 18k, and RETO Kodak H35. Plus the best film for half frame photography.">
+<meta property="og:site_name" content="Half Frame Club">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Camera Reviews & Film Guides — Half Frame Club">
+<meta name="twitter:description" content="In-depth reviews of 14 half frame cameras including the Olympus Pen series, Yashica Samurai, Canon Demi, Agat 18k, and RETO Kodak H35. Plus the best film for half frame photography.">
+</head>
+<body>
+<nav><a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/shoot-kit.html" class="active">Shoot &amp; Kit</a></li><li><a href="/journal.html">Journal</a></li><li><a href="/darkroom.html">Darkroom</a></li><li><a href="/shop.html" class="shop">Shop</a></li></ul><a class="nav-right" href="/">← Home</a></nav>
+<div class="page-header">
+  <span class="section-label">Shoot &amp; Kit</span>
+  <h1>Cameras, Film<br>&amp; <em>Everything Between</em></h1>
+  <p class="page-sub">Fourteen cameras reviewed in depth, two film guides, and a complete breakdown of every Olympus Pen half frame ever made.</p>
+</div>
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="cameras">Camera Reviews</button>
+  <button class="filter-btn" data-filter="film">Film Guides</button>
+  <button class="filter-btn" data-filter="olympus">Olympus Guide</button>
+</div>
+<div class="content-section" id="section-cameras">
+  <span class="sub-label">Camera Reviews</span>
+  <h2 class="sub-title">The Full Roster</h2>
+  <p class="sub-desc">Every camera reviewed is one that's been shot, tested, and lived with — not just unboxed. Real opinions, real results.</p>
+  <div class="cameras-grid">
+    <a class="camera-card featured" href="/yashicasamurai.html">
+      <div class="camera-card-img"><img src="/images/yashicasamurai/20730012.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">SLR · Zoom · Auto</span><h3>Yashica Samurai X3.0</h3><p class="camera-card-excerpt">I didn't want this camera at all. Then the images came back and my jaw dropped. The Zeiss-connected lens on this thing produces insanely sharp, saturated results.</p><div class="camera-card-meta"><span class="camera-card-specs">25–75mm · Auto · SLR</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/canon_auto_tele.html">
+      <div class="camera-card-img"><img src="/images/canon_auto_tele/000039810013.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Point &amp; Shoot · Dual Focal</span><h3>Canon Auto Tele 6</h3><p class="camera-card-excerpt">My go-to camera for a year and a half. Full auto, two focal lengths, fits in a pocket.</p><div class="camera-card-meta"><span class="camera-card-specs">35mm / 60mm · Auto</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/olympuspenft.html">
+      <div class="camera-card-img"><img src="/images/olympuspenft/fullsizeoutput-ec2_orig.jpeg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">SLR · Metered</span><h3>Olympus Pen FT</h3><p class="camera-card-excerpt">The gold standard of half frame SLRs. Reviewed by Natalie Smart who fell in love before she knew what half frame was.</p><div class="camera-card-meta"><span class="camera-card-specs">38mm · TTL · SLR</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/oympus-pen-f.html">
+      <div class="camera-card-img"><img src="/images/oympus-pen-f/42300023-edited.jpeg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">SLR · Full Manual</span><h3>Olympus Pen F</h3><p class="camera-card-excerpt">One of the best cameras I have ever used — not just half frame. Heavy, but worth every gram.</p><div class="camera-card-meta"><span class="camera-card-specs">38mm/1.8 · Manual</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/olympus-pen-eed.html">
+      <div class="camera-card-img"><img src="/images/olympus-pen-eed/57510003-edited.jpeg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Automatic · Fast Lens</span><h3>Olympus Pen EED</h3><p class="camera-card-excerpt">An odd duck that bridges the Electric Eye and Pen D series. Fast f/1.7 lens, auto exposure.</p><div class="camera-card-meta"><span class="camera-card-specs">28mm/1.7 · Auto</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/olympuspeneereview.html">
+      <div class="camera-card-img"><img src="/images/olympuspeneereview/img-1863_orig.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Automatic · Point &amp; Shoot</span><h3>Olympus Pen EE</h3><p class="camera-card-excerpt">Spotted in a Brighton camera shop and immediately had to have it. By Natalie Smart.</p><div class="camera-card-meta"><span class="camera-card-specs">28mm/3.5 · Selenium</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/fujicahalf.html">
+      <div class="camera-card-img"><img src="/images/fujicahalf/15790027.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Semi-Auto · Manual Override</span><h3>Fujica Half</h3><p class="camera-card-excerpt">A beautiful little brick of a camera. Heavy for its size, but built to last.</p><div class="camera-card-meta"><span class="camera-card-specs">28mm/2.8 · Semi-Auto</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/ektarh35.html">
+      <div class="camera-card-img"><img src="/images/ektarh35/19290074_orig.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Modern · Point &amp; Shoot</span><h3>RETO Kodak H35</h3><p class="camera-card-excerpt">I carried this alongside a Leica M3 for two months and reached for it more than once.</p><div class="camera-card-meta"><span class="camera-card-specs">28mm · f/8 · 1/100</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/canondemi.html">
+      <div class="camera-card-img"><img src="/images/canondemi/30010007-edited_1.jpeg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Semi-Auto · Slim</span><h3>Canon Demi</h3><p class="camera-card-excerpt">Satin-finished and impossibly slim. A good go-anywhere, post-apocalyptic kinda camera.</p><div class="camera-card-meta"><span class="camera-card-specs">28mm · Semi-Auto</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/agat18k.html">
+      <div class="camera-card-img"><img src="/images/agat18k/30020006.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Soviet · Full Manual</span><h3>Agat 18k</h3><p class="camera-card-excerpt">A whimsical little camera from Russia that fits in any pocket. Quirky, fully manual, endearing.</p><div class="camera-card-meta"><span class="camera-card-specs">28mm · Full Manual</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/chaika2.html">
+      <div class="camera-card-img"><img src="/images/chaika2/42290010_1.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Soviet · Interchangeable Lens</span><h3>Chaika II</h3><p class="camera-card-excerpt">USSR stamped on the back. Film door popped open in Mexico. The images were kind of beautiful.</p><div class="camera-card-meta"><span class="camera-card-specs">28mm/2.8 · Full Manual</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/795-184536.html">
+      <div class="camera-card-img"><img src="/images/minolta-repo/89510060_orig.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Semi-Auto · Selenium</span><h3>Minolta Repo</h3><p class="camera-card-excerpt">One of the best looking half frame cameras I've laid eyes on. A beautiful paperweight.</p><div class="camera-card-meta"><span class="camera-card-specs">Selenium · No Battery</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/795.html">
+      <div class="camera-card-img"><img src="/images/ricoh-auto-half/53140033_orig.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Automatic · Self-Winding</span><h3>Ricoh Auto Half</h3><p class="camera-card-excerpt">Simple thing of beauty. Mine was a disaster. But damn, this camera is cute.</p><div class="camera-card-meta"><span class="camera-card-specs">25mm/2.8 · Self-Winding</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+
+    <a class="camera-card" href="/tobias-pen-f.html">
+      <div class="camera-card-img"><img src="/images/weebly/151-29-1_orig.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Guest Review · SLR</span><h3>Olympus Pen F — by Tobias Eriksson</h3><p class="camera-card-excerpt">A personal take on the bare bones SLR — M42 mounts, modded lenses, and 72 frames of pure manual photography.</p><div class="camera-card-meta"><span class="camera-card-specs">Manual · Guest Writer</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+    <a class="camera-card" href="/tobias-canon-demi-c.html">
+      <div class="camera-card-img"><img src="/images/weebly/dscf1343_orig.jpg" alt="" loading="lazy"></div>
+      <div class="camera-card-body"><span class="camera-type-tag">Guest Review · Dual Focal</span><h3>Canon Demi C — by Tobias Eriksson</h3><p class="camera-card-excerpt">The odd bird of the Demi family. Two interchangeable lenses on a compact half frame — unique for 1965, still unique today.</p><div class="camera-card-meta"><span class="camera-card-specs">28mm + 50mm · Guest Writer</span><span class="camera-card-link">Read Review →</span></div></div>
+    </a>
+  </div>
+</div>
+<div class="content-section" id="section-film">
+  <span class="sub-label">Film Guides</span>
+  <h2 class="sub-title">What to Shoot</h2>
+  <p class="sub-desc">Film choice matters more in half frame than almost any other format. The smaller negative magnifies every grain, every tonal shift, every quirk of the emulsion.</p>
+  <div class="film-grid">
+    <a class="film-card" href="/top-3-color-films-for-half-frame.html">
+      <span class="film-medal">Color Films</span>
+      <h3>Top 3 Color Films for Half Frame</h3>
+      <p class="film-card-excerpt">Ultra-fine grain, bold saturation, emulsions that hold up at 18×24mm.</p>
+      <div class="film-top-item"><span class="film-top-num">01</span><span class="film-top-name">Kodak Ektar 100</span><span class="film-top-note">Gold</span></div>
+      <div class="film-top-item"><span class="film-top-num">02</span><span class="film-top-name">Kodak Portra 400</span><span class="film-top-note">Silver</span></div>
+      <div class="film-top-item"><span class="film-top-num">03</span><span class="film-top-name">Fuji Superia 400</span><span class="film-top-note">Bronze</span></div>
+      <span class="film-cta">Read the full guide →</span>
+    </a>
+    <a class="film-card" href="/top-3-bw-films-for-half-frame.html">
+      <span class="film-medal">Black &amp; White Films</span>
+      <h3>Top 3 B&amp;W Films for Half Frame</h3>
+      <p class="film-card-excerpt">Grain becomes character. Tonal range becomes texture. Three emulsions that handle the format.</p>
+      <div class="film-top-item"><span class="film-top-num">01</span><span class="film-top-name">Ilford Delta 100</span><span class="film-top-note">Gold</span></div>
+      <div class="film-top-item"><span class="film-top-num">02</span><span class="film-top-name">Kodak T-Max 400</span><span class="film-top-note">Silver</span></div>
+      <div class="film-top-item"><span class="film-top-num">03</span><span class="film-top-name">Kosmo Foto Mono</span><span class="film-top-note">Bronze</span></div>
+      <span class="film-cta">Read the full guide →</span>
+    </a>
+  </div>
+</div>
+<div class="content-section" id="section-olympus">
+  <span class="sub-label">The Definitive Guide</span>
+  <h2 class="sub-title">Every Olympus Pen, Ranked</h2>
+  <p class="sub-desc">Yoshihisa Maitani designed some of the best compact cameras ever made. Here's the complete breakdown of every half frame Pen model.</p>
+  <div class="guide-feature">
+    <div class="guide-inner">
+      <div>
+        <span class="sub-label">Why Olympus?</span>
+        <h3>The case for the Pen series</h3>
+        <p>Produced in huge numbers during the 60s and 70s, these cameras are still easy to find, still mostly working, and still producing excellent images.</p>
+        <p>From the EE2 I carry everywhere to the F SLR I reserved for portraits — here's every model I've shot with honest takes on each.</p>
+        <a href="/olympushalfframes-938779.html" class="btn" style="margin-top:1rem;display:inline-block">Read the Full Guide →</a>
+      </div>
+      <div>
+        <div class="pen-grid">
+          <div class="pen-item"><div class="pen-cat">Full Auto</div><div class="pen-name">Pen EE2 ★</div></div>
+          <div class="pen-item"><div class="pen-cat">Full Auto</div><div class="pen-name">Pen EES 2 ★</div></div>
+          <div class="pen-item"><div class="pen-cat">Full Auto</div><div class="pen-name">Pen EE3</div></div>
+          <div class="pen-item"><div class="pen-cat">Full Manual</div><div class="pen-name">Pen S ★</div></div>
+          <div class="pen-item"><div class="pen-cat">Full Manual</div><div class="pen-name">Original Pen</div></div>
+          <div class="pen-item"><div class="pen-cat">Full Manual</div><div class="pen-name">Pen W</div></div>
+          <div class="pen-item"><div class="pen-cat">Metered</div><div class="pen-name">Pen D2</div></div>
+          <div class="pen-item"><div class="pen-cat">Metered Auto</div><div class="pen-name">Pen EED</div></div>
+          <div class="pen-item"><div class="pen-cat">SLR</div><div class="pen-name">Pen F</div></div>
+          <div class="pen-item"><div class="pen-cat">SLR</div><div class="pen-name">Pen FT ★</div></div>
+          <div class="pen-item"><div class="pen-cat">SLR</div><div class="pen-name">Pen FV</div></div>
+        </div>
+        <p style="font-size:11px;opacity:0.35;margin-top:0.75rem">★ HFC recommended</p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© HFC 2025 · <a href="#" style="color:inherit;opacity:0.5">Affiliate disclosure</a></div>
+</footer>
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      const sections = { cameras: 'section-cameras', film: 'section-film', olympus: 'section-olympus' };
+      if (f === 'all') { Object.values(sections).forEach(id => document.getElementById(id).classList.remove('hidden')); }
+      else { Object.values(sections).forEach(id => document.getElementById(id).classList.add('hidden')); if (sections[f]) document.getElementById(sections[f]).classList.remove('hidden'); }
+    });
+  });
+</script>
+</body>
+</html>

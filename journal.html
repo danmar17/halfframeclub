@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="half frame photography artists, film photography journal, featured photographer, analog photography">
+<meta name="description" content="Featured photographers, community projects, and essays on half frame film photography. Ten artists featured from Tokyo to Vienna.">
+<title>Journal — Half Frame Club | Artists, Community & Essays</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --teal: #2A7F7F;
+    --black: #0a0a0a;
+    --bg: #F8F5F0;
+    --text: #1a1a1a;
+    --mid: #EDE9E2;
+    --border: rgba(26,26,26,0.12);
+    --border-gold: rgba(201,168,76,0.4);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); font-weight: 300; line-height: 1.7; font-size: 16px; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(248,245,240,0.95); backdrop-filter: blur(10px); border-bottom: 0.5px solid var(--border-gold); }
+  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.6; transition: opacity 0.2s, color 0.2s; white-space: nowrap; }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-links a.active { opacity: 1; color: var(--teal); }
+  .nav-links a.shop { color: var(--gold); opacity: 0.9; }
+  .nav-right { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); text-decoration: none; opacity: 0.75; flex-shrink: 0; }
+  .nav-right:hover { opacity: 1; }
+  .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
+  .btn { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.85rem 2rem; border: 0.5px solid var(--gold); color: var(--gold); text-decoration: none; background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; }
+  .btn:hover { background: var(--gold); color: var(--black); }
+  footer { padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border-gold); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; }
+  .footer-links { display: flex; gap: 1.75rem; list-style: none; }
+  .footer-links a { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.35; transition: opacity 0.2s; }
+  .footer-links a:hover { opacity: 0.8; }
+  .footer-copy { font-size: 11px; opacity: 0.3; }
+  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } footer { flex-direction: column; gap: 1.25rem; text-align: center; } .footer-links { flex-wrap: wrap; justify-content: center; } }
+
+  .page-header { padding: 6rem 3rem 2.5rem; border-bottom: 0.5px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px,5vw,62px); font-weight: 300; line-height: 1.02; color: var(--black); }
+  h1 em { font-style: italic; color: var(--gold); }
+  .header-right { font-size: 15px; opacity: 0.5; line-height: 1.85; padding-bottom: 0.5rem; }
+  .section { padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,3vw,38px); font-weight: 300; color: var(--black); margin-bottom: 0.5rem; }
+  .section-sub { font-size: 15px; opacity: 0.5; max-width: 520px; line-height: 1.8; margin-bottom: 2.5rem; }
+  .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; }
+  .section-link { font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--teal); text-decoration: none; opacity: 0.75; white-space: nowrap; margin-left: 2rem; }
+  .section-link:hover { opacity: 1; }
+  .artists-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .artist-card { border: 0.5px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
+  .artist-card:hover { border-color: var(--border-gold); }
+  .artist-card:hover .artist-name { color: var(--gold); }
+  .artist-img { height: 200px; background: var(--mid); overflow: hidden; border-bottom: 0.5px solid var(--border); }
+  .artist-img svg { width: 28px; height: 28px; opacity: 0.12; }
+  .artist-body { padding: 1.25rem 1.5rem 1.5rem; }
+  .artist-date { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; display: block; }
+  .artist-name { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; line-height: 1.2; margin-bottom: 0.3rem; color: var(--black); transition: color 0.2s; }
+  .artist-meta { font-size: 12px; opacity: 0.4; margin-bottom: 0.5rem; }
+  .artist-intro { font-size: 14px; opacity: 0.55; line-height: 1.7; }
+  .community-section { background: var(--mid); }
+  .behold-wrap { margin-top: 1rem; }
+  .archive-list { border-top: 0.5px solid var(--border); margin-top: 1rem; }
+  .archive-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 0.5px solid var(--border); text-decoration: none; color: var(--text); }
+  .archive-item:hover .archive-title { color: var(--gold); }
+  .archive-left { display: flex; align-items: center; gap: 1.5rem; }
+  .archive-tag { font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--teal); min-width: 90px; }
+  .archive-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--black); transition: color 0.2s; }
+  .archive-meta { font-size: 11px; opacity: 0.35; }
+  .cta-bar { border: 0.5px solid var(--border-gold); padding: 2rem 2.5rem; margin-top: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: rgba(201,168,76,0.03); }
+  .cta-bar h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; margin-bottom: 0.3rem; color: var(--black); }
+  .cta-bar p { font-size: 14px; opacity: 0.5; line-height: 1.7; }
+  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-header { grid-template-columns: 1fr; gap: 1rem; padding: 5.5rem 1.5rem 2rem; } .section { padding: 3rem 1.5rem; } .artists-grid { grid-template-columns: 1fr; } .cta-bar { flex-direction: column; align-items: flex-start; } }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Journal — Half Frame Club | Artists, Community & Essays">
+<meta property="og:description" content="Featured photographers, community projects, and essays on half frame film photography. Ten artists featured from Tokyo to Vienna.">
+<meta property="og:site_name" content="Half Frame Club">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Journal — Half Frame Club | Artists, Community & Essays">
+<meta name="twitter:description" content="Featured photographers, community projects, and essays on half frame film photography. Ten artists featured from Tokyo to Vienna.">
+</head>
+<body>
+<nav><a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li><li><a href="/journal.html" class="active">Journal</a></li><li><a href="/darkroom.html">Darkroom</a></li><li><a href="/shop.html" class="shop">Shop</a></li></ul><a class="nav-right" href="/">← Home</a></nav>
+<div class="page-header">
+  <div>
+    <span class="section-label">The Journal</span>
+    <h1>Artists &amp;<br><em>Community</em></h1>
+  </div>
+  <div class="header-right">Ten photographers featured since 2018. Community work from around the world. Submit your project, a review, or a series via the contact page.</div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div>
+      <span class="section-label">Featured Artists</span>
+      <h2 class="section-title">The People Behind the Lens</h2>
+      <p class="section-sub">Photographers from Tokyo to Vienna, Los Angeles to The Hague — all shooting half frame, all making work worth sharing.</p>
+    </div>
+    <a href="/artistofthemonth.html" class="section-link">View all artists →</a>
+  </div>
+  <div class="artists-grid">
+    <a class="artist-card" href="/artists/yuki-fukunishi.html">
+      <div class="artist-img"><img src="/images/agat18k/30020008.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="artist-body"><span class="artist-date">December 2022</span><div class="artist-name">Yuki Fukunishi</div><div class="artist-meta">Tokyo, Japan · Olympus Pen EE3</div><div class="artist-intro">Bold contrast and stark composition — like a vertical window peering into another world.</div></div>
+    </a>
+    <a class="artist-card" href="/artists/tony-munoz.html">
+      <div class="artist-img"><img src="/images/canon_auto_tele/000039810013.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="artist-body"><span class="artist-date">October 2020</span><div class="artist-name">Tony Munoz</div><div class="artist-meta">Los Angeles, CA · Olympus Pen D</div><div class="artist-intro">Head of graphics at Vans. Making art out of vintage light catching boxes.</div></div>
+    </a>
+    <a class="artist-card" href="/artists/mike-dinsmore.html">
+      <div class="artist-img"><img src="/images/oympus-pen-f/42300023-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="artist-body"><span class="artist-date">January 2019</span><div class="artist-name">Mike Dinsmore</div><div class="artist-meta">Osaka, Japan · Olympus Pen D · Tri-X 400</div><div class="artist-intro">Walking Japanese neighborhoods in the mornings with a camera nobody notices.</div></div>
+    </a>
+    <a class="artist-card" href="/artists/sebastian-binder.html">
+      <div class="artist-img"><img src="/images/olympus-pen-eed/57510003-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="artist-body"><span class="artist-date">November 2018</span><div class="artist-name">Sebastian Binder</div><div class="artist-meta">Vienna, Austria · Olympus Pen FT · HP5+</div><div class="artist-intro">High contrast B&amp;W — street, portraiture, skate action. Already distinctive enough to recognize.</div></div>
+    </a>
+    <a class="artist-card" href="/artists/adam-clitheroe.html">
+      <div class="artist-img"><img src="/images/canondemi/30010007-edited_1.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="artist-body"><span class="artist-date">September 2018</span><div class="artist-name">Adam Clitheroe</div><div class="artist-meta">United Kingdom · Fujica Drive · Delta 400</div><div class="artist-intro">British Paranoia — a sketchbook of modern Britain shot on clockwork Fujica Drives.</div></div>
+    </a>
+    <a class="artist-card" href="/artistofthemonth.html">
+      <div class="artist-img" style="background:rgba(201,168,76,0.08);border-bottom:0.5px solid var(--border-gold)"><svg viewBox="0 0 32 32" fill="none" stroke="#C9A84C" stroke-width="1" style="opacity:0.4"><rect x="4" y="8" width="24" height="18" rx="2"/><circle cx="16" cy="17" r="5"/><path d="M16 12v10M12 16h8"/></svg></div>
+      <div class="artist-body"><span class="artist-date" style="color:var(--gold)">View All</span><div class="artist-name">All 10 Featured Artists →</div><div class="artist-meta">From 2018 to present</div><div class="artist-intro">Browse the full archive of featured photographers from around the world.</div></div>
+    </a>
+  </div>
+</div>
+
+<div class="section community-section">
+  <div class="section-header">
+    <div>
+      <span class="section-label">#halfframeclub</span>
+      <h2 class="section-title">From the Community</h2>
+      <p class="section-sub">The latest from Instagram. Tag #halfframeclub to be featured.</p>
+    </div>
+    <a href="https://www.instagram.com/halfframeclub/" target="_blank" rel="noopener" class="section-link">Follow on Instagram →</a>
+  </div>
+  <div class="behold-wrap">
+    <behold-widget feed-id="KdT520fYDQ6c97ig7gGA"></behold-widget>
+    <script>(() => { const d=document,s=d.createElement("script");s.type="module";s.src="https://w.behold.so/widget.js";d.head.append(s); })();</script>
+  </div>
+</div>
+
+<div class="section">
+  <span class="section-label">Archive</span>
+  <h2 class="section-title">All Reviews &amp; Guides</h2>
+  <p class="section-sub">The complete library of camera reviews, film guides, and the Olympus Pen breakdown.</p>
+  <div class="archive-list">
+    <a class="archive-item" href="/olympushalfframes-938779.html"><div class="archive-left"><span class="archive-tag">Guide</span><span class="archive-title">Every Olympus Pen Half Frame, Ranked</span></div><span class="archive-meta">Dan Marinelli</span></a>
+    <a class="archive-item" href="/top-3-color-films-for-half-frame.html"><div class="archive-left"><span class="archive-tag">Film Guide</span><span class="archive-title">Top 3 Color Films for Half Frame</span></div><span class="archive-meta">Dan Marinelli</span></a>
+    <a class="archive-item" href="/top-3-bw-films-for-half-frame.html"><div class="archive-left"><span class="archive-tag">Film Guide</span><span class="archive-title">Top 3 B&amp;W Films for Half Frame</span></div><span class="archive-meta">Dan Marinelli</span></a>
+    <a class="archive-item" href="/yashicasamurai.html"><div class="archive-left"><span class="archive-tag">Camera Review</span><span class="archive-title">Yashica Samurai X3.0</span></div><span class="archive-meta">Dan Marinelli</span></a>
+    <a class="archive-item" href="/olympuspenft.html"><div class="archive-left"><span class="archive-tag">Camera Review</span><span class="archive-title">Olympus Pen FT</span></div><span class="archive-meta">Natalie Smart</span></a>
+    <a class="archive-item" href="/ektarh35.html"><div class="archive-left"><span class="archive-tag">Camera Review</span><span class="archive-title">RETO Kodak H35</span></div><span class="archive-meta">Dan Marinelli</span></a>
+    <a class="archive-item" href="/canon_auto_tele.html"><div class="archive-left"><span class="archive-tag">Camera Review</span><span class="archive-title">Canon Auto Tele 6</span></div><span class="archive-meta">Dan Marinelli</span></a>
+    <a class="archive-item" href="/oympus-pen-f.html"><div class="archive-left"><span class="archive-tag">Camera Review</span><span class="archive-title">Olympus Pen F</span></div><span class="archive-meta">Dan Marinelli</span></a>
+    <a class="archive-item" href="/journal-posts/serie-censurados.html"><div class="archive-left"><span class="archive-tag">Community</span><span class="archive-title">Serie Censurados by Pascal Hernandez</span></div><span class="archive-meta">Pascal Hernandez · 2020</span></a>
+    <a class="archive-item" href="/shoot-kit.html"><div class="archive-left"><span class="archive-tag">All Reviews</span><span class="archive-title">View All Camera Reviews →</span></div><span class="archive-meta">Shoot &amp; Kit</span></a>
+  </div>
+  <div class="cta-bar">
+    <div><h3>Want to contribute?</h3><p>Have a camera review, a project, or an essay worth sharing? HFC is built on community voices.</p></div>
+    <a href="/contact.html" class="btn">Get in Touch →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© HFC 2025 · <a href="#" style="color:inherit;opacity:0.5">Affiliate disclosure</a></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="minolta repo review, minolta half frame, selenium half frame camera">
+<meta name="description" content="Review of the Minolta Repo half frame camera. One of the best looking half frame cameras ever made — a beautiful gunmetal paperweight.">
+<title>Minolta Repo Review — Half Frame Camera | Half Frame Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#C9A84C;--teal:#2A7F7F;--black:#0a0a0a;--white:#F5F2EC;--bg:#F8F5F0;--text:#1a1a1a;--mid:#EDE9E2;--border:rgba(26,26,26,0.1);--border-gold:rgba(201,168,76,0.4)}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);font-weight:300;line-height:1.7;font-size:16px}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(248,245,240,0.95);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--border-gold)}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+  .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+  .nav-links a{font-size:13px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.6;transition:opacity 0.2s,color 0.2s}
+  .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold)}
+  .nav-links a.shop{color:var(--gold);opacity:1}
+  .nav-back{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);text-decoration:none;opacity:0.7}
+  .nav-back:hover{opacity:1}
+  .hero{padding:6rem 3rem 0;border-bottom:0.5px solid var(--border)}
+  .hero-inner{max-width:900px;margin:0 auto}
+  .breadcrumb{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;text-decoration:none;display:inline-block;opacity:0.7}
+  .breadcrumb:hover{opacity:1}
+  .type-tag{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,72px);font-weight:300;line-height:1.02;margin-bottom:0.75rem;color:var(--black)}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero-sub{font-size:15px;opacity:0.55;max-width:600px;line-height:1.8;margin-bottom:2rem}
+  .specs-bar{display:flex;gap:2rem;padding:1.25rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);flex-wrap:wrap}
+  .spec-item{display:flex;flex-direction:column;gap:0.2rem}
+  .spec-label{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;opacity:0.4}
+  .spec-value{font-size:12px;font-weight:500;color:var(--black);letter-spacing:0.03em}
+  .hero-photo{height:320px;overflow:hidden;border-bottom:0.5px solid var(--border);background:var(--mid)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .article{max-width:720px;margin:0 auto;padding:4rem 3rem}
+  .article-section{margin-bottom:3rem}
+  .article-section-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:0.5px solid var(--border-gold)}
+  .article-section p{font-size:15px;line-height:1.9;color:var(--text);opacity:0.8;margin-bottom:1rem}
+  .img-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:2.5rem 0}
+  .img-slot{aspect-ratio:1/1;overflow:hidden;background:var(--mid)}
+  .img-slot img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+  .img-slot:hover img{transform:scale(1.03)}
+  .verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:2rem 0}
+  .verdict-item{background:var(--bg);padding:1.25rem 1.5rem}
+  .verdict-q{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
+  .verdict-a{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--black);line-height:1.3}
+  .verdict-note{font-size:12px;opacity:0.55;margin-top:0.3rem;line-height:1.7;font-size:16px}
+  .affiliate-box{border:0.5px solid var(--border-gold);padding:1.5rem 2rem;margin:2.5rem 0;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;background:rgba(201,168,76,0.04)}
+  .affiliate-box-text{font-size:12px;opacity:0.6;line-height:1.7}
+  .affiliate-box-text strong{color:var(--black);opacity:1;font-weight:500;display:block;margin-bottom:0.25rem;font-size:13px}
+  .affiliate-btn{display:inline-block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;padding:0.75rem 1.5rem;border:0.5px solid var(--gold);color:var(--gold);text-decoration:none;background:transparent;transition:background 0.25s,color 0.25s;white-space:nowrap}
+  .affiliate-btn:hover{background:var(--gold);color:var(--black)}
+  .image-note{font-size:11px;opacity:0.4;font-style:italic;text-align:center;margin-top:0.5rem}
+  .nav-reviews{border-top:0.5px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center}
+  .nav-review-link{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);text-decoration:none;opacity:0.6}
+  .nav-review-link:hover{opacity:1}
+  .nav-review-center{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.4}
+  .nav-review-center:hover{opacity:0.8;color:var(--gold)}
+  footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border-gold)}
+  .footer-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
+  .footer-copy{font-size:10px;opacity:0.25}
+  @media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}.hero{padding:5.5rem 1.5rem 0}.article{padding:3rem 1.5rem}.verdict-grid{grid-template-columns:1fr}.affiliate-box{flex-direction:column;align-items:flex-start}.img-gallery{grid-template-columns:1fr 1fr}.nav-reviews{padding:1.5rem;flex-direction:column;gap:1rem;text-align:center}footer{flex-direction:column;gap:1rem;text-align:center}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Minolta Repo Review — Half Frame Camera | Half Frame Club">
+<meta property="og:description" content="Review of the Minolta Repo half frame camera. One of the best looking half frame cameras ever made — a beautiful gunmetal paperweight.">
+<meta property="og:site_name" content="Half Frame Club">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Minolta Repo Review — Half Frame Camera | Half Frame Club">
+<meta name="twitter:description" content="Review of the Minolta Repo half frame camera. One of the best looking half frame cameras ever made — a beautiful gunmetal paperweight.">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/shoot-kit.html" class="active">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/shop.html" class="shop">Shop</a></li>
+  </ul>
+  <a class="nav-back" href="/shoot-kit.html">← All Reviews</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <a class="breadcrumb" href="/shoot-kit.html">← Shoot &amp; Kit</a>
+    <div class="type-tag">Semi-Auto · Selenium Meter · No Battery</div>
+    <h1>Minolta <em>Repo</em></h1>
+    <p class="hero-sub">One of the best-looking half frame cameras I have ever laid eyes on. A beautiful gunmetal paperweight — and somehow the images it made are gorgeous anyway.</p>
+    <div class="specs-bar">
+      <div class="spec-item"><span class="spec-label">Meter</span><span class="spec-value">Selenium · No Battery</span></div>
+      <div class="spec-item"><span class="spec-label">Exposure</span><span class="spec-value">Match Needle</span></div>
+      <div class="spec-item"><span class="spec-label">Focus</span><span class="spec-value">Range / Zone</span></div>
+      <div class="spec-item"><span class="spec-label">Override</span><span class="spec-value">Manual Available</span></div>
+      <div class="spec-item"><span class="spec-label">Origin</span><span class="spec-value">Japan</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="hero-photo">
+  <img src="images/minolta-repo/89510060_orig.jpg" alt="Minolta Repo — open road, hazy">
+</div>
+
+<div class="article">
+
+  <div class="article-section">
+    <div class="article-section-label">Background</div>
+    <p>I had wanted this camera for a long time. I have always been a big fan of Minolta optics and this camera checked a lot of boxes — hybrid auto/manual exposure via a needle system, range focus, options for manual override, and a selenium meter that needs no batteries. These are usually found on eBay fairly easily but are on the pricier side, usually shipping from Japan. I crossed my fingers and clicked Buy It Now.</p>
+  </div>
+
+  <div class="article-section">
+    <div class="article-section-label">The Camera</div>
+    <p>Straight away, this is one of the best-looking half frame cameras I have ever laid eyes on. Mine came in a dark gunmetal grey. A cursory inspection showed the meter working, the shutter speed adjusting, and apertures working correctly. The lens seemed clear and scratch free. The light seals looked a bit shoddy, but I loaded a roll of Portra 160 and went to work.</p>
+    <p>In use, this camera is a bit more complicated than a pure point and shoot like the Pen EE but definitely easier than something like a Pen F. Focus is range-based with 3 presets. Exposure is set with a match needle system — just line up the needle in the green rectangle and go. In the field this camera quickly became an extension of me. The viewfinder is bright and clear. It may be my new favorite half frame...</p>
+  </div>
+
+  <div class="article-section">
+    <div class="article-section-label">The Pictures</div>
+    <p>Long exhale. The photos were foggy and hazy — barely usable unless I was trying to emulate a dream sequence from a soap opera. Exposure seemed fine and the film was stable, but the images were ruined by a fogged inner element I had not detected on inspection. I tried to clean it off with a microfiber and then a kim wipe. No luck.</p>
+    <p>And yet — looking at these images now — there is something undeniably beautiful about the haze. The desert at Anza-Borrego, the open road stretching into nowhere, the old truck bathed in blown-out California afternoon light. The fogged optic turned every frame into something dreamlike. Not what I set out to make. But not nothing either.</p>
+  </div>
+
+  <div class="verdict-grid">
+    <div class="verdict-item"><div class="verdict-q">Outcome</div><div class="verdict-a">Beautiful paperweight</div><div class="verdict-note">So now I have this gorgeous camera here to stare at while I write this review.</div></div>
+    <div class="verdict-item"><div class="verdict-q">Would I try again?</div><div class="verdict-a">Undecided</div><div class="verdict-note">Not sure how many copies I would need to find one that worked — or how long it would stay working.</div></div>
+    <div class="verdict-item"><div class="verdict-q">The images though</div><div class="verdict-a">Accidentally gorgeous</div><div class="verdict-note">The fogged element turned every frame into something dreamlike. Not intended — but hard to argue with.</div></div>
+    <div class="verdict-item"><div class="verdict-q">Bottom line</div><div class="verdict-a">Buy with caution</div><div class="verdict-note">Inspect the lens elements carefully before buying. These are worth finding a good copy of.</div></div>
+  </div>
+
+  <div class="affiliate-box">
+    <div class="affiliate-box-text">
+      <strong>Interested in picking one up?</strong>
+      These usually ship from Japan on eBay — use our affiliate link to search. Helps support HFC at no extra cost.
+    </div>
+    <a class="affiliate-btn" href="https://www.ebay.com/sch/i.html?_nkw=minolta+repo" target="_blank" rel="noopener">Find on eBay →</a>
+  </div>
+
+  <div class="img-gallery">
+    <div class="img-slot"><img src="images/minolta-repo/89510015_orig.jpg" alt="" loading="lazy"></div>
+    <div class="img-slot"><img src="images/minolta-repo/89510016_orig.jpg" alt="" loading="lazy"></div>
+    <div class="img-slot"><img src="images/minolta-repo/89510017_orig.jpg" alt="" loading="lazy"></div>
+    <div class="img-slot"><img src="images/minolta-repo/89510021_orig.jpg" alt="" loading="lazy"></div>
+    <div class="img-slot"><img src="images/minolta-repo/89510054_orig.jpg" alt="" loading="lazy"></div>
+    <div class="img-slot"><img src="images/minolta-repo/89510060_orig.jpg" alt="" loading="lazy"></div>
+  </div>
+  <p class="image-note">All images shot on Kodak Portra 160 · Fogged inner lens element · Unintentional haze · Accidental beauty</p>
+
+</div>
+
+<div class="nav-reviews">
+  <a class="nav-review-link" href="/shoot-kit.html">← Back to All Reviews</a>
+  <a class="nav-review-center" href="/shoot-kit.html">View All 14 Cameras</a>
+  <a class="nav-review-link" href="/darkroom.html">HFC Darkroom Tools →</a>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
+  <div class="footer-copy">© HFC 2025 · Affiliate disclosure</div>
+</footer>
+</body>
+</html>
