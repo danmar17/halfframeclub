@@ -8,19 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #C9A84C;
-    --teal: #2A7F7F;
+    --gold: #E8A020;
+    --teal: #1A9E9E;
     --black: #0a0a0a;
-    --bg: #F8F5F0;
+    --bg: #FDFCFA;
     --text: #1a1a1a;
-    --mid: #EDE9E2;
+    --mid: #F0EDE6;
     --border: rgba(26,26,26,0.12);
-    --border-gold: rgba(201,168,76,0.4);
+    --border-gold: rgba(232,160,32,0.4);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); font-weight: 300; line-height: 1.7; font-size: 16px; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(248,245,240,0.95); backdrop-filter: blur(10px); border-bottom: 0.5px solid var(--border-gold); }
-  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(253,252,250,0.96); backdrop-filter: blur(10px); border-bottom: 6px solid var(--black); box-shadow: 0 6px 0 #E8A020; }
+  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; } .nav-logo img { height: 34px; width: auto; display: block; opacity: 0.9; }
   .nav-links { display: flex; gap: 2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
   .nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.6; transition: opacity 0.2s, color 0.2s; white-space: nowrap; }
   .nav-links a:hover { opacity: 1; color: var(--gold); }
@@ -31,12 +31,12 @@
   .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
   .btn { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.85rem 2rem; border: 0.5px solid var(--gold); color: var(--gold); text-decoration: none; background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; }
   .btn:hover { background: var(--gold); color: var(--black); }
-  footer { padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border-gold); }
+  footer{padding:1.75rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--teal);border-top:9px solid #E8A020}
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; }
   .footer-links { display: flex; gap: 1.75rem; list-style: none; }
-  .footer-links a { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.35; transition: opacity 0.2s; }
+  .footer-links a{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#E8A020;text-decoration:none;opacity:1;font-weight:500;transition:opacity 0.2s,color 0.2s}
   .footer-links a:hover { opacity: 0.8; }
-  .footer-copy { font-size: 11px; opacity: 0.3; }
+  .footer-copy{font-size:12px;color:rgba(255,255,255,0.8);font-weight:400}
   @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } footer { flex-direction: column; gap: 1.25rem; text-align: center; } .footer-links { flex-wrap: wrap; justify-content: center; } }
 
   .page-header { padding: 7rem 3rem 2.5rem; border-bottom: 0.5px solid var(--border); }
@@ -52,7 +52,7 @@
   .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
   .col-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; display: block; }
   .drop-zone { border: 0.5px dashed rgba(26,26,26,0.25); padding: 2rem 1rem; text-align: center; cursor: pointer; position: relative; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; transition: border-color 0.2s, background 0.2s; }
-  .drop-zone:hover, .drop-zone.dragover { border-color: var(--gold); background: rgba(201,168,76,0.03); }
+  .drop-zone:hover, .drop-zone.dragover { border-color: var(--gold); background: rgba(232,160,32,0.03); }
   .drop-zone input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
   .drop-icon { font-size: 24px; opacity: 0.2; }
   .drop-text { font-size: 13px; opacity: 0.45; letter-spacing: 0.04em; }
@@ -121,7 +121,7 @@
       <div class="controls">
         <div class="control-row"><span class="control-label">Outer border</span><input type="range" id="dip-border" min="0" max="120" value="60" step="4"><span class="val" id="dip-border-val">60px</span></div>
         <div class="control-row"><span class="control-label">Gap between frames</span><input type="range" id="dip-gap" min="0" max="60" value="12" step="2"><span class="val" id="dip-gap-val">12px</span></div>
-        <div class="control-row"><span class="control-label">Background</span><select id="dip-bg"><option value="#ffffff">White</option><option value="#F8F5F0">Cream</option><option value="#0a0a0a">Black</option><option value="#C9A84C">Gold</option></select></div>
+        <div class="control-row"><span class="control-label">Background</span><select id="dip-bg"><option value="#ffffff">White</option><option value="#F8F5F0">Cream</option><option value="#0a0a0a">Black</option><option value="#E8A020">Gold</option></select></div>
         <label class="check-row"><input type="checkbox" id="dip-brand" checked><span class="check-label">Include HFC branding</span></label>
         <label class="check-row"><input type="checkbox" id="dip-film"><span class="check-label">Film border style</span></label>
       </div>
@@ -206,7 +206,7 @@ document.getElementById('dip-process').addEventListener('click', () => {
   const ctx=c.getContext('2d'); ctx.fillStyle=bg; ctx.fillRect(0,0,cw,ch);
   if (film) { ctx.fillStyle='rgba(0,0,0,0.07)'; for (let y=border+8;y<border+h-20;y+=30) { ctx.fillRect(border-18,y,12,20); ctx.fillRect(cw-border+6,y,12,20); } }
   ctx.drawImage(leftImg,border,border,lw,h); ctx.drawImage(rightImg,border+lw+gap,border,rw,h);
-  if (brand) { ctx.fillStyle='rgba(201,168,76,0.7)'; ctx.font='400 11px Jost,sans-serif'; ctx.textAlign='center'; ctx.fillText('HALF FRAME CLUB',cw/2,ch-16); }
+  if (brand) { ctx.fillStyle='rgba(232,160,32,0.7)'; ctx.font='400 11px Jost,sans-serif'; ctx.textAlign='center'; ctx.fillText('HALF FRAME CLUB',cw/2,ch-16); }
   document.getElementById('dip-output').style.display='block';
 });
 document.getElementById('dip-download').addEventListener('click', () => { const a=document.createElement('a'); a.download='hfc-diptych.png'; a.href=document.getElementById('dip-canvas').toDataURL(); a.click(); });
@@ -241,5 +241,6 @@ document.getElementById('batch-process').addEventListener('click', async () => {
   }
 });
 </script>
+<script src="/lightbox.js"></script>
 </body>
 </html>

@@ -8,14 +8,14 @@
 <title>Top 3 Color Films for Half Frame Photography | Half Frame Club</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--gold:#C9A84C;--teal:#2A7F7F;--black:#0a0a0a;--white:#F5F2EC;--bg:#F8F5F0;--text:#1a1a1a;--mid:#EDE9E2;--border:rgba(26,26,26,0.1);--border-gold:rgba(201,168,76,0.4)}
+  :root{--gold:#E8A020;--teal:#1A9E9E;--black:#0a0a0a;--white:#F5F2EC;--bg:#FDFCFA;--text:#1a1a1a;--mid:#F0EDE6;--border:rgba(26,26,26,0.1);--border-gold:rgba(232,160,32,0.4)}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);font-weight:300;line-height:1.7;font-size:16px}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(248,245,240,0.95);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--border-gold)}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(253,252,250,0.96);backdrop-filter:blur(8px);border-bottom:6px solid var(--black);box-shadow:0 6px 0 #E8A020}
+  .nav-logo{text-decoration:none;flex-shrink:0;display:flex;align-items:center}.nav-logo img{height:34px;width:auto;display:block;opacity:0.9}
   .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
   .nav-links a{font-size:13px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.6;transition:opacity 0.2s,color 0.2s}
-  .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold)}
+  .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--teal);border-bottom:1.5px solid var(--teal);padding-bottom:2px}
   .nav-links a.shop{color:var(--gold);opacity:1}
   .nav-back{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);text-decoration:none;opacity:0.7}
   .nav-back:hover{opacity:1}
@@ -29,9 +29,9 @@
   .film-entry:last-of-type{border-bottom:none}
   .medal-bar{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem}
   .medal{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;flex-shrink:0}
-  .medal.gold{background:rgba(201,168,76,0.15);color:var(--gold);border:0.5px solid var(--gold)}
+  .medal.gold{background:rgba(232,160,32,0.15);color:var(--gold);border:0.5px solid var(--gold)}
   .medal.silver{background:rgba(26,26,26,0.06);color:var(--text);border:0.5px solid rgba(26,26,26,0.2)}
-  .medal.bronze{background:rgba(42,127,127,0.08);color:var(--teal);border:0.5px solid rgba(42,127,127,0.3)}
+  .medal.bronze{background:rgba(26,158,158,0.08);color:var(--teal);border:0.5px solid rgba(26,158,158,0.3)}
   .medal-info{}
   .medal-rank{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;opacity:0.4;margin-bottom:0.2rem}
   .film-name{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--black)}
@@ -49,9 +49,9 @@
   footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border-gold)}
   .footer-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
   .footer-links{display:flex;gap:2rem;list-style:none}
-  .footer-links a{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.3;transition:opacity 0.2s}
+  .footer-links a{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#E8A020;text-decoration:none;opacity:1;font-weight:500;transition:opacity 0.2s,color 0.2s}
   .footer-links a:hover{opacity:0.8}
-  .footer-copy{font-size:10px;opacity:0.25}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,0.8);font-weight:400}
   @media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}.hero{padding:5.5rem 1.5rem 2rem}.article{padding:2.5rem 1.5rem}.film-images{grid-template-columns:1fr 1fr}footer{flex-direction:column;gap:1rem;text-align:center}}
 </style>
 <meta property="og:type" content="website">
@@ -64,7 +64,7 @@
 </head>
 <body>
 <nav>
-  <a class="nav-logo" href="/"><img style="width:100%;height:100%;object-fit:cover;display:block" src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a>
+  <a class="nav-logo" href="/"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a>
   <ul class="nav-links">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/shoot-kit.html" class="active">Shoot & Kit</a></li>
@@ -103,9 +103,9 @@
       <p>I spent all summer walking around with Ektar loaded in my Yashica Samurai, working on a big personal project. The following images were shot on a Canon Demi along the Historic US Highway 395.</p>
     </div>
     <div class="film-images">
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/02860004-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/02860016-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/02860051-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/02860004-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/02860016-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/02860051-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
     </div>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=kodak+ektar+100" target="_blank" rel="noopener">Buy Ektar 100 →</a>
     <p class="cameras-note">Shot on Canon Demi along Historic US Highway 395</p>
@@ -130,9 +130,9 @@
       <p>The consistency of results is the best thing and simultaneously the worst thing about this film. You always get good to great results, but you never get any fun surprises or wild contrast. That being said I still turn to this film fairly often, especially when I want a consistent look across a series I am working on. If I was planning to shoot portraits or people, this is the clear choice.</p>
     </div>
     <div class="film-images">
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/02860067-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/02860072-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/20730057.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/02860067-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/02860072-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/20730057.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
     </div>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=kodak+portra+400" target="_blank" rel="noopener">Buy Portra 400 →</a>
     <p class="cameras-note">Shot on Pen EE2 in North San Diego County</p>
@@ -157,9 +157,9 @@
       <p>This past summer I started messing around with Fuji C200 and found it equally pleasing in a slightly different way. Surprisingly the grain is about the same as Superia (possibly larger) and the tones are a bit cooler — but this is an excellent consumer-grade film for any use, especially half frame.</p>
     </div>
     <div class="film-images">
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/20730062.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/20730077.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:cover;display:block" src="../images/top-3-color/57500006-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/20730062.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/20730077.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="film-img-slot"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="../images/top-3-color/57500006-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
     </div>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=fuji+superia+400" target="_blank" rel="noopener">Buy Superia 400 →</a>
     <p class="cameras-note">Top 3 images on Pen EED · Bottom 3 on Yashica Samurai · Carlsbad, CA — can you tell which film is which?</p>
@@ -168,7 +168,7 @@
 </div>
 
 <footer>
-  <div class="footer-logo"><img style="width:100%;height:100%;object-fit:cover;display:block" src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
+  <div class="footer-logo"><img style="width:100%;height:100%;object-fit:contain;background:var(--mid)" src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
   <ul class="footer-links">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/shoot-kit.html">Shoot & Kit</a></li>
@@ -178,5 +178,6 @@
   </ul>
   <div class="footer-copy">© HFC 2025</div>
 </footer>
+<script src="/lightbox.js"></script>
 </body>
 </html>

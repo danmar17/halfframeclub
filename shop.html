@@ -8,11 +8,11 @@
 <title>Shop — Half Frame Club Merch & Guides</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--gold:#C9A84C;--teal:#2A7F7F;--black:#0a0a0a;--white:#F5F2EC;--bg:#F8F5F0;--text:#1a1a1a;--mid:#EDE9E2;--border:rgba(26,26,26,0.1);--border-gold:rgba(201,168,76,0.4)}
+  :root{--gold:#E8A020;--teal:#1A9E9E;--black:#0a0a0a;--white:#F5F2EC;--bg:#FDFCFA;--text:#1a1a1a;--mid:#F0EDE6;--border:rgba(26,26,26,0.1);--border-gold:rgba(232,160,32,0.4)}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);font-weight:300;line-height:1.7;font-size:16px}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(248,245,240,0.95);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--border-gold)}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(253,252,250,0.96);backdrop-filter:blur(8px);border-bottom:6px solid var(--black);box-shadow:0 6px 0 #E8A020}
+  .nav-logo{text-decoration:none;flex-shrink:0;display:flex;align-items:center}.nav-logo img{height:34px;width:auto;display:block;opacity:0.9}
   .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
   .nav-links a{font-size:13px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.6;transition:opacity 0.2s,color 0.2s}
   .nav-links a:hover{opacity:1;color:var(--gold)}
@@ -22,13 +22,13 @@
   h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5vw,64px);font-weight:300;line-height:1.02;margin-bottom:0.75rem;color:var(--black)}
   h1 em{font-style:italic;color:var(--gold)}
   .header-sub{font-size:13px;opacity:0.5;max-width:500px;line-height:1.85}
-  .shop-section{padding:4rem 3rem;border-bottom:0.5px solid var(--border)}
+  .shop-section{border-top:2px solid var(--teal);padding:4rem 3rem;border-bottom:0.5px solid var(--border)}
   .shop-section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem}
   .shop-section-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--black)}
   .shop-section-note{font-size:11px;opacity:0.4;letter-spacing:0.04em}
   /* Shopify buy button container */
-  .shopify-section{padding:0 3rem 4rem}
-  .shopify-placeholder{border:0.5px dashed var(--border-gold);padding:3rem;text-align:center;background:rgba(201,168,76,0.02);margin-bottom:2rem}
+  .shopify-section{border-top:2px solid var(--teal);padding:0 3rem 4rem}
+  .shopify-placeholder{border:0.5px dashed var(--border-gold);padding:3rem;text-align:center;background:rgba(232,160,32,0.02);margin-bottom:2rem}
   .shopify-placeholder-icon{font-size:32px;margin-bottom:1rem;opacity:0.3}
   .shopify-placeholder h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:0.5rem;color:var(--black)}
   .shopify-placeholder p{font-size:12px;opacity:0.45;margin-bottom:1.5rem;line-height:1.7}
@@ -55,10 +55,10 @@
   footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border-gold)}
   .footer-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
   .footer-links{display:flex;gap:2rem;list-style:none}
-  .footer-links a{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.3;transition:opacity 0.2s}
+  .footer-links a{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#E8A020;text-decoration:none;opacity:1;font-weight:500;transition:opacity 0.2s,color 0.2s}
   .footer-links a:hover{opacity:0.8}
-  .footer-copy{font-size:10px;opacity:0.25}
-  @media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{display:none}.page-header{padding:5.5rem 1.5rem 2rem}.shop-section{padding:3rem 1.5rem}.shopify-section{padding:0 1.5rem 3rem}.products-grid{grid-template-columns:1fr 1fr}.coming-soon{flex-direction:column;align-items:flex-start}footer{flex-direction:column;gap:1rem;text-align:center}}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,0.8);font-weight:400}
+  @media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{display:none}.page-header{padding:5.5rem 1.5rem 2rem}.shop-section{border-top:2px solid var(--teal);padding:3rem 1.5rem}.shopify-section{border-top:2px solid var(--teal);padding:0 1.5rem 3rem}.products-grid{grid-template-columns:1fr 1fr}.coming-soon{flex-direction:column;align-items:flex-start}footer{flex-direction:column;gap:1rem;text-align:center}}
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shop — Half Frame Club Merch & Guides">
@@ -184,5 +184,6 @@
   </ul>
   <div class="footer-copy">© HFC 2025</div>
 </footer>
+<script src="/lightbox.js"></script>
 </body>
 </html>

@@ -8,19 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #C9A84C;
-    --teal: #2A7F7F;
+    --gold: #E8A020;
+    --teal: #1A9E9E;
     --black: #0a0a0a;
-    --bg: #F8F5F0;
+    --bg: #FDFCFA;
     --text: #1a1a1a;
-    --mid: #EDE9E2;
+    --mid: #F0EDE6;
     --border: rgba(26,26,26,0.12);
-    --border-gold: rgba(201,168,76,0.4);
+    --border-gold: rgba(232,160,32,0.4);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); font-weight: 300; line-height: 1.7; font-size: 16px; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(248,245,240,0.95); backdrop-filter: blur(10px); border-bottom: 0.5px solid var(--border-gold); }
-  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(253,252,250,0.96); backdrop-filter: blur(10px); border-bottom: 6px solid var(--black); box-shadow: 0 6px 0 #E8A020; }
+  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; } .nav-logo img { height: 34px; width: auto; display: block; opacity: 0.9; }
   .nav-links { display: flex; gap: 2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
   .nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.6; transition: opacity 0.2s, color 0.2s; white-space: nowrap; }
   .nav-links a:hover { opacity: 1; color: var(--gold); }
@@ -31,19 +31,19 @@
   .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
   .btn { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.85rem 2rem; border: 0.5px solid var(--gold); color: var(--gold); text-decoration: none; background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; }
   .btn:hover { background: var(--gold); color: var(--black); }
-  footer { padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border-gold); }
+  footer{padding:1.75rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--teal);border-top:9px solid #E8A020}
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; }
   .footer-links { display: flex; gap: 1.75rem; list-style: none; }
-  .footer-links a { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.35; transition: opacity 0.2s; }
+  .footer-links a{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#E8A020;text-decoration:none;opacity:1;font-weight:500;transition:opacity 0.2s,color 0.2s}
   .footer-links a:hover { opacity: 0.8; }
-  .footer-copy { font-size: 11px; opacity: 0.3; }
+  .footer-copy{font-size:12px;color:rgba(255,255,255,0.8);font-weight:400}
   @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } footer { flex-direction: column; gap: 1.25rem; text-align: center; } .footer-links { flex-wrap: wrap; justify-content: center; } }
 
   .page-header { padding: 6rem 3rem 2.5rem; border-bottom: 0.5px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }
   h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px,5vw,62px); font-weight: 300; line-height: 1.02; color: var(--black); }
   h1 em { font-style: italic; color: var(--gold); }
   .header-right { font-size: 15px; opacity: 0.5; line-height: 1.85; padding-bottom: 0.5rem; }
-  .section { padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
+  .section { border-top: 2px solid var(--teal); padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
   .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,3vw,38px); font-weight: 300; color: var(--black); margin-bottom: 0.5rem; }
   .section-sub { font-size: 15px; opacity: 0.5; max-width: 520px; line-height: 1.8; margin-bottom: 2.5rem; }
   .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; }
@@ -53,7 +53,7 @@
   .artist-card { border: 0.5px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
   .artist-card:hover { border-color: var(--border-gold); }
   .artist-card:hover .artist-name { color: var(--gold); }
-  .artist-img { height: 200px; background: var(--mid); overflow: hidden; border-bottom: 0.5px solid var(--border); }
+  .artist-img { height: 200px; background: var(--mid); display: flex; align-items: center; justify-content: center; border-bottom: 0.5px solid var(--border); overflow: hidden; }
   .artist-img svg { width: 28px; height: 28px; opacity: 0.12; }
   .artist-body { padding: 1.25rem 1.5rem 1.5rem; }
   .artist-date { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; display: block; }
@@ -69,10 +69,10 @@
   .archive-tag { font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--teal); min-width: 90px; }
   .archive-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--black); transition: color 0.2s; }
   .archive-meta { font-size: 11px; opacity: 0.35; }
-  .cta-bar { border: 0.5px solid var(--border-gold); padding: 2rem 2.5rem; margin-top: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: rgba(201,168,76,0.03); }
+  .cta-bar { border: 0.5px solid var(--border-gold); padding: 2rem 2.5rem; margin-top: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: rgba(232,160,32,0.03); }
   .cta-bar h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; margin-bottom: 0.3rem; color: var(--black); }
   .cta-bar p { font-size: 14px; opacity: 0.5; line-height: 1.7; }
-  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-header { grid-template-columns: 1fr; gap: 1rem; padding: 5.5rem 1.5rem 2rem; } .section { padding: 3rem 1.5rem; } .artists-grid { grid-template-columns: 1fr; } .cta-bar { flex-direction: column; align-items: flex-start; } }
+  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-header { grid-template-columns: 1fr; gap: 1rem; padding: 5.5rem 1.5rem 2rem; } .section { border-top: 2px solid var(--teal); padding: 3rem 1.5rem; } .artists-grid { grid-template-columns: 1fr; } .cta-bar { flex-direction: column; align-items: flex-start; } }
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Journal — Half Frame Club | Artists, Community & Essays">
@@ -123,7 +123,7 @@
       <div class="artist-body"><span class="artist-date">September 2018</span><div class="artist-name">Adam Clitheroe</div><div class="artist-meta">United Kingdom · Fujica Drive · Delta 400</div><div class="artist-intro">British Paranoia — a sketchbook of modern Britain shot on clockwork Fujica Drives.</div></div>
     </a>
     <a class="artist-card" href="/artistofthemonth.html">
-      <div class="artist-img" style="background:rgba(201,168,76,0.08);border-bottom:0.5px solid var(--border-gold)"><svg viewBox="0 0 32 32" fill="none" stroke="#C9A84C" stroke-width="1" style="opacity:0.4"><rect x="4" y="8" width="24" height="18" rx="2"/><circle cx="16" cy="17" r="5"/><path d="M16 12v10M12 16h8"/></svg></div>
+      <div class="artist-img" style="background:rgba(232,160,32,0.08);border-bottom:6px solid var(--black);box-shadow:0 6px 0 #E8A020"><svg viewBox="0 0 32 32" fill="none" stroke="#E8A020" stroke-width="1" style="opacity:0.4"><rect x="4" y="8" width="24" height="18" rx="2"/><circle cx="16" cy="17" r="5"/><path d="M16 12v10M12 16h8"/></svg></div>
       <div class="artist-body"><span class="artist-date" style="color:var(--gold)">View All</span><div class="artist-name">All 10 Featured Artists →</div><div class="artist-meta">From 2018 to present</div><div class="artist-intro">Browse the full archive of featured photographers from around the world.</div></div>
     </a>
   </div>
@@ -178,5 +178,6 @@
   </ul>
   <div class="footer-copy">© HFC 2025 · <a href="#" style="color:inherit;opacity:0.5">Affiliate disclosure</a></div>
 </footer>
+<script src="/lightbox.js"></script>
 </body>
 </html>
