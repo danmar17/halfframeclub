@@ -55,12 +55,11 @@ nav {
   height: 40px;
 }
 .nav-logo img {
-  height: 36px;
-  width: auto;
+  height: 36px !important;
+  width: auto !important;
   display: block;
-  mix-blend-mode: multiply;
   opacity: 0.9;
-  transition: opacity 0.2s;
+  max-height: 36px;
 }
 .nav-logo img:hover { opacity: 1; }
 
