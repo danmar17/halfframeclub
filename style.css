@@ -58,6 +58,7 @@ nav {
   height: 36px;
   width: auto;
   display: block;
+  mix-blend-mode: multiply;
   opacity: 0.9;
   transition: opacity 0.2s;
 }
