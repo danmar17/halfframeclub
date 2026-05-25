@@ -20,7 +20,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); font-weight: 300; line-height: 1.7; font-size: 16px; }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(253,252,250,0.96); backdrop-filter: blur(10px); border-bottom: 6px solid var(--black); box-shadow: 0 6px 0 #E8A020; }
-  .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; } .nav-logo img { height: 34px; width: auto; display: block; opacity: 0.9; }
+  .nav-logo{text-decoration:none;flex-shrink:0;display:flex;align-items:center} .nav-logo img { height: 34px; width: auto; display: block; opacity: 0.9; }
   .nav-links { display: flex; gap: 2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
   .nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text); text-decoration: none; opacity: 0.6; transition: opacity 0.2s, color 0.2s; white-space: nowrap; }
   .nav-links a:hover { opacity: 1; color: var(--gold); }
@@ -112,9 +112,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Camera Reviews & Film Guides — Half Frame Club">
 <meta name="twitter:description" content="In-depth reviews of 14 half frame cameras including the Olympus Pen series, Yashica Samurai, Canon Demi, Agat 18k, and RETO Kodak H35. Plus the best film for half frame photography.">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<nav><a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:32px;width:auto;opacity:0.85"></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/shoot-kit.html" class="active">Shoot &amp; Kit</a></li><li><a href="/journal.html">Journal</a></li><li><a href="/darkroom.html">Darkroom</a></li>></ul><a class="nav-right" href="/">← Home</a></nav>
+<nav>
+  <a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club"></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+  </ul>
+  <a class="nav-right" href="https://www.instagram.com/halfframeclub/" target="_blank" rel="noopener">@halfframeclub</a>
+</nav>
 <div class="page-header">
   <span class="section-label">Shoot &amp; Kit</span>
   <h1>Cameras, Film<br>&amp; <em>Everything Between</em></h1>
@@ -252,16 +262,15 @@
   </div>
 </div>
 <footer>
-  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:24px;width:auto;opacity:0.55"></div>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club"></div>
   <ul class="footer-links">
     <li><a href="/">Home</a></li>
     <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
     <li><a href="/journal.html">Journal</a></li>
     <li><a href="/darkroom.html">Darkroom</a></li>
-    <li><a href="/shop.html">Shop</a></li>
     <li><a href="/contact.html">Contact</a></li>
   </ul>
-  <div class="footer-copy">© HFC 2025 · <a href="#" style="color:inherit;opacity:0.5">Affiliate disclosure</a></div>
+  <div class="footer-copy">© HFC 2025</div>
 </footer>
 <script>
   document.querySelectorAll('.filter-btn').forEach(btn => {
