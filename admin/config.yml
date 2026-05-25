@@ -11,6 +11,70 @@ display_url: https://halfframeclub.com
 logo_url: /images/hfc-logo.png
 
 collections:
+
+  # ============================================================
+  # SITE SETTINGS
+  # ============================================================
+  - name: "settings"
+    label: "Site Settings"
+    files:
+
+      - label: "Homepage"
+        name: "homepage"
+        file: "_data/homepage.json"
+        fields:
+          - { label: "Hero Headline", name: "hero_headline", widget: "string", default: "Shoot half. See more." }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text", default: "A nine-year community dedicated to half frame film photography." }
+          - label: "Featured Post 1"
+            name: "featured_1"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+          - label: "Featured Post 2"
+            name: "featured_2"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+          - label: "Featured Post 3"
+            name: "featured_3"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+
+      - label: "Global"
+        name: "global"
+        file: "_data/global.json"
+        fields:
+          - { label: "Site Name", name: "site_name", widget: "string", default: "Half Frame Club" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Half Frame Film Photography" }
+          - { label: "Contact Email", name: "email", widget: "string", default: "halfframeclub@gmail.com" }
+          - { label: "Instagram Handle", name: "instagram", widget: "string", default: "@halfframeclub" }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string", default: "https://www.instagram.com/halfframeclub/" }
+          - { label: "Footer Copyright", name: "copyright", widget: "string", default: "© HFC 2025" }
+
+      - label: "SEO & Meta"
+        name: "seo"
+        file: "_data/seo.json"
+        fields:
+          - { label: "Homepage Title", name: "home_title", widget: "string" }
+          - { label: "Homepage Description", name: "home_description", widget: "text" }
+          - { label: "Default OG Image", name: "og_image", widget: "image", required: false }
+
+  # ============================================================
+  # JOURNAL POSTS
+  # ============================================================
   - name: "journal"
     label: "Journal Posts"
     label_singular: "Journal Post"
@@ -33,6 +97,9 @@ collections:
       - { label: "Excerpt", name: "excerpt", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  # ============================================================
+  # CAMERA REVIEWS
+  # ============================================================
   - name: "reviews"
     label: "Camera Reviews"
     label_singular: "Camera Review"
@@ -43,12 +110,22 @@ collections:
       - { label: "Camera Name", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string", default: "Dan Marinelli" }
-      - { label: "Type Tag", name: "type_tag", widget: "string" }
+      - { label: "Type Tag", name: "type_tag", widget: "string", hint: "e.g. Soviet · Full Manual" }
       - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
       - { label: "Subtitle", name: "subtitle", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Specs"
+        name: "specs"
+        widget: "list"
+        allow_add: true
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Value", name: "value", widget: "string" }
       - { label: "eBay URL", name: "ebay_url", widget: "string", required: false }
 
+  # ============================================================
+  # FEATURED ARTISTS
+  # ============================================================
   - name: "artists"
     label: "Featured Artists"
     label_singular: "Featured Artist"
@@ -59,9 +136,27 @@ collections:
       - { label: "Artist Name", name: "title", widget: "string" }
       - { label: "Date Featured", name: "date", widget: "datetime" }
       - { label: "Location", name: "location", widget: "string" }
-      - { label: "Instagram", name: "instagram", widget: "string" }
-      - { label: "Camera", name: "camera", widget: "string" }
-      - { label: "Film", name: "film", widget: "string" }
+      - { label: "Instagram Handle", name: "instagram", widget: "string" }
+      - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+      - { label: "Camera Used", name: "camera", widget: "string" }
+      - { label: "Film Used", name: "film", widget: "string" }
       - { label: "Card Image", name: "card_image", widget: "image", required: false }
-      - { label: "Intro", name: "intro", widget: "text" }
-      - { label: "Interview", name: "body", widget: "markdown" }
+      - { label: "Intro Paragraph", name: "intro", widget: "text" }
+      - { label: "Full Interview", name: "body", widget: "markdown" }
+
+  # ============================================================
+  # SHOP ITEMS
+  # ============================================================
+  - name: "shop"
+    label: "Shop Items"
+    label_singular: "Shop Item"
+    folder: "_shop"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Buy Link", name: "buy_url", widget: "string" }
+      - { label: "Active", name: "active", widget: "boolean", default: true }

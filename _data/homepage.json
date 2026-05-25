@@ -1,0 +1,25 @@
+{
+  "hero_headline": "Shoot half. See more.",
+  "hero_subtext": "A nine-year community dedicated to half frame film photography — the cameras, the people, and the art they create.",
+  "featured_1": {
+    "title": "Yashica Samurai X3.0",
+    "tag": "Camera Review",
+    "url": "/yashicasamurai.html",
+    "excerpt": "I didn't want this camera at all. Then the images came back and my jaw dropped.",
+    "image": "/images/yashicasamurai/20730012.jpg"
+  },
+  "featured_2": {
+    "title": "Top 3 Color Films for Half Frame",
+    "tag": "Film Guide",
+    "url": "/top-3-color-films-for-half-frame.html",
+    "excerpt": "Which emulsions render best in the 18x24mm format — tested and ranked.",
+    "image": "/images/top-3-color/ektar.jpg"
+  },
+  "featured_3": {
+    "title": "The People Behind the Lens",
+    "tag": "Featured Artists",
+    "url": "/artistofthemonth.html",
+    "excerpt": "Ten photographers from around the world shooting half frame film.",
+    "image": "/images/weebly/yuki-unnamed-1_orig.jpg"
+  }
+}
