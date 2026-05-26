@@ -439,7 +439,7 @@ section {
   margin: 2rem 0;
 }
 .film-img-slot {
-  aspect-ratio: 1/1.35;
+  aspect-ratio: 1/1;
   overflow: hidden;
   background: var(--mid);
   display: flex;
@@ -447,8 +447,8 @@ section {
   justify-content: center;
 }
 .film-img-slot img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   display: block;
 }
@@ -589,4 +589,24 @@ blockquote, .pullquote {
   width: 60px;
   height: 2px;
   background: var(--teal);
+}
+
+/* Film box badge */
+.film-box-badge {
+  float: right;
+  margin: 0 0 1.5rem 2rem;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mid);
+  border: 0.5px solid var(--border);
+  padding: 8px;
+}
+.film-box-badge img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
 }

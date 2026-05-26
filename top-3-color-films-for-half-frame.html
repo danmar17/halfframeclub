@@ -40,8 +40,8 @@
   .film-spec span{color:var(--teal);font-weight:500}
   .film-body p{font-size:14px;line-height:1.9;opacity:0.78;margin-bottom:1rem}
   .film-body p:last-child{margin-bottom:0}
-  .film-images{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:2rem 0}
-  .film-img-slot{background:var(--mid);aspect-ratio:3/2;overflow:hidden}
+  .film-images{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:2rem 0}
+  .film-img-slot{aspect-ratio:1/1;overflow:hidden;background:var(--mid);display:flex;align-items:center;justify-content:center}
   .film-img-slot svg{width:20px;height:20px}
   .buy-link{display:inline-block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;padding:0.65rem 1.4rem;border:0.5px solid var(--gold);color:var(--gold);text-decoration:none;background:transparent;transition:background 0.25s,color 0.25s;margin-top:0.5rem}
   .buy-link:hover{background:var(--gold);color:var(--black)}
@@ -52,7 +52,7 @@
   .footer-links a{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#E8A020;text-decoration:none;opacity:1;font-weight:500;transition:opacity 0.2s,color 0.2s}
   .footer-links a:hover{opacity:0.8}
   .footer-copy{font-size:12px;color:rgba(255,255,255,0.8);font-weight:400}
-  @media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}.hero{padding:5.5rem 1.5rem 2rem}.article{padding:2.5rem 1.5rem}.film-images{grid-template-columns:1fr 1fr}footer{flex-direction:column;gap:1rem;text-align:center}}
+  @media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}.hero{padding:5.5rem 1.5rem 2rem}.article{padding:2.5rem 1.5rem}.film-images{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:2rem 0}footer{flex-direction:column;gap:1rem;text-align:center}}
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Top 3 Color Films for Half Frame Photography | Half Frame Club">
@@ -91,6 +91,7 @@
         <div class="film-name">Kodak Ektar 100</div>
       </div>
     </div>
+    <div class="film-box-badge"><img src="/images/top-3-color/ektar.jpg" alt="Film box"></div>
     <div class="film-specs">
       <div class="film-spec">ISO <span>100</span></div>
       <div class="film-spec">Type <span>Color Negative</span></div>
@@ -103,15 +104,14 @@
       <p>I spent all summer walking around with Ektar loaded in my Yashica Samurai, working on a big personal project. The following images were shot on a Canon Demi along the Historic US Highway 395.</p>
     </div>
     <div class="film-images">
-      <div class="film-img-slot"><img src="/images/top-3-color/ektar.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/02860004-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/02860016-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/02860051-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/02860067-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/02860072-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/02860004-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/02860016-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/02860051-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/02860067-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/02860072-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
     </div>
-      <div class="film-img-slot"><img src="/images/top-3-color/02860016-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/02860051-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/02860016-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/02860051-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
     </div>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=kodak+ektar+100" target="_blank" rel="noopener">Buy Ektar 100 →</a>
     <p class="cameras-note">Shot on Canon Demi along Historic US Highway 395</p>
@@ -125,6 +125,7 @@
         <div class="film-name">Kodak Portra 400</div>
       </div>
     </div>
+    <div class="film-box-badge"><img src="/images/top-3-color/porta400.jpg" alt="Film box"></div>
     <div class="film-specs">
       <div class="film-spec">ISO <span>400</span></div>
       <div class="film-spec">Type <span>Color Negative</span></div>
@@ -136,15 +137,14 @@
       <p>The consistency of results is the best thing and simultaneously the worst thing about this film. You always get good to great results, but you never get any fun surprises or wild contrast. That being said I still turn to this film fairly often, especially when I want a consistent look across a series I am working on. If I was planning to shoot portraits or people, this is the clear choice.</p>
     </div>
     <div class="film-images">
-      <div class="film-img-slot"><img src="/images/top-3-color/porta400.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/20730057.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/20730062.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/20730077.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/57500006-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/57500020-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/20730057.jpg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/20730062.jpg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/20730077.jpg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/57500006-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/57500020-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
     </div>
-      <div class="film-img-slot"><img src="/images/top-3-color/02860072-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/20730057.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/02860072-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/20730057.jpg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
     </div>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=kodak+portra+400" target="_blank" rel="noopener">Buy Portra 400 →</a>
     <p class="cameras-note">Shot on Pen EE2 in North San Diego County</p>
@@ -158,6 +158,7 @@
         <div class="film-name">Fuji Superia 400 / C200</div>
       </div>
     </div>
+    <div class="film-box-badge"><img src="/images/top-3-color/fuji-superia-400.jpg" alt="Film box"></div>
     <div class="film-specs">
       <div class="film-spec">ISO <span>200–400</span></div>
       <div class="film-spec">Type <span>Color Negative</span></div>
@@ -169,15 +170,14 @@
       <p>This past summer I started messing around with Fuji C200 and found it equally pleasing in a slightly different way. Surprisingly the grain is about the same as Superia (possibly larger) and the tones are a bit cooler — but this is an excellent consumer-grade film for any use, especially half frame.</p>
     </div>
     <div class="film-images">
-      <div class="film-img-slot"><img src="/images/top-3-color/fuji-superia-400.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/57500051-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/57500066.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/57500070-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/57500072-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/57510014-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/57500051-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/57500066.jpg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/57500070-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/57500072-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/57510014-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
     </div>
-      <div class="film-img-slot"><img src="/images/top-3-color/20730077.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div class="film-img-slot"><img src="/images/top-3-color/57500006-edited.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/20730077.jpg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+      <div class="film-img-slot"><img src="/images/top-3-color/57500006-edited.jpeg" alt="" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
     </div>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=fuji+superia+400" target="_blank" rel="noopener">Buy Superia 400 →</a>
     <p class="cameras-note">Top 3 images on Pen EED · Bottom 3 on Yashica Samurai · Carlsbad, CA — can you tell which film is which?</p>
