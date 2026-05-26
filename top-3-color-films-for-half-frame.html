@@ -3,34 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The best color films for half frame cameras — Kodak Ektar 100, Portra 400, and Fuji Superia ranked and reviewed. Film choice matters more in half frame than any other format.">
-<title>Top 3 Color Films for Half Frame — Half Frame Club — HALF FRAME CLUB</title>
+<meta name="description" content="The best color films for half frame cameras — Kodak Ektar 100, Portra 400, and Fuji Superia ranked and reviewed.">
+<title>Top 3 Color Films for Half Frame — HALF FRAME CLUB</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Jost', sans-serif; background: #FDFCFA; color: #1a1a1a; font-weight: 300; line-height: 1.7; font-size: 16px; }
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 3rem; background: rgba(253,252,250,0.96); backdrop-filter: blur(10px); border-bottom: 6px solid #0a0a0a; box-shadow: 0 6px 0 #E8A020; }
 .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
-.nav-logo img { height: 36px !important; max-height: 36px !important; width: auto; display: block; opacity: 0.9; }
+.nav-logo img { height: 36px !important; max-height: 36px !important; width: auto; display: block; }
 .nav-links { display: flex; gap: 2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
 .nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: #1a1a1a; text-decoration: none; opacity: 0.6; white-space: nowrap; }
 .nav-links a:hover, .nav-links a.active { opacity: 1; color: #1A9E9E; }
 .nav-right { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #1A9E9E; text-decoration: none; opacity: 0.75; flex-shrink: 0; }
 .page-header { padding: 6rem 3rem 2.5rem; border-bottom: 1px solid rgba(26,26,26,0.12); max-width: 860px; }
 .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #1A9E9E; margin-bottom: 0.5rem; display: block; }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 5vw, 60px); font-weight: 300; color: #0a0a0a; margin-bottom: 0.75rem; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px,5vw,60px); font-weight: 300; color: #0a0a0a; margin-bottom: 0.75rem; }
 h1 em { font-style: italic; color: #E8A020; }
 .page-sub { font-size: 16px; opacity: 0.6; max-width: 580px; line-height: 1.85; }
 .article { max-width: 820px; margin: 0 auto; padding: 4rem 3rem; }
 .film-entry { margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(26,26,26,0.12); }
 .film-entry:last-child { border-bottom: none; }
-.medal-bar { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+.film-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 1.5rem; }
+.film-header-left { display: flex; align-items: center; gap: 1.5rem; }
 .medal { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; flex-shrink: 0; }
 .medal.gold { background: rgba(232,160,32,0.12); color: #E8A020; border: 1px solid #E8A020; }
 .medal.silver { background: rgba(26,26,26,0.06); color: #1a1a1a; border: 1px solid rgba(26,26,26,0.2); }
 .medal.bronze { background: rgba(26,158,158,0.08); color: #1A9E9E; border: 1px solid rgba(26,158,158,0.3); }
 .film-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #0a0a0a; }
 .film-rank { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.4; margin-bottom: 0.2rem; }
+.film-box { width: 100px; height: 100px; flex-shrink: 0; background: #EDE9E2; border: 0.5px solid rgba(26,26,26,0.12); padding: 8px; display: flex; align-items: center; justify-content: center; }
+.film-box img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
 .film-specs { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 13px; opacity: 0.5; }
 .film-specs span { color: #1A9E9E; font-weight: 500; }
 .film-body p { font-size: 16px; line-height: 1.9; opacity: 0.8; margin-bottom: 1rem; }
@@ -45,7 +48,7 @@ footer { padding: 1.75rem 3rem; display: flex; justify-content: space-between; a
 .footer-links a { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #E8A020; text-decoration: none; font-weight: 500; }
 .footer-links a:hover { color: #fff; }
 .footer-copy { font-size: 12px; color: rgba(255,255,255,0.8); }
-@media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .article { padding: 2.5rem 1.5rem; } .photo-grid { grid-template-columns: repeat(2, 1fr); } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; } .footer-links { flex-wrap: wrap; justify-content: center; } }
+@media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .article { padding: 2.5rem 1.5rem; } .photo-grid { grid-template-columns: repeat(2, 1fr); } .film-header { flex-direction: column; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; } .footer-links { flex-wrap: wrap; justify-content: center; } }
 </style>
 </head>
 <body>
@@ -60,77 +63,86 @@ footer { padding: 1.75rem 3rem; display: flex; justify-content: space-between; a
   <a class="nav-right" href="https://www.instagram.com/halfframeclub/" target="_blank" rel="noopener">@halfframeclub</a>
 </nav>
 <div class="page-header">
-  <span class="section-label">Film Guide</span>
+  <span class="section-label">Film Guide · Shoot &amp; Kit</span>
   <h1>Top 3 Color Films for Half Frame</h1>
-  <p class="page-sub">The best color films for half frame cameras — Kodak Ektar 100, Portra 400, and Fuji Superia ranked and reviewed. Film choice matters more in half frame than any other format.</p>
+  <p class="page-sub">The best color films for half frame cameras — Kodak Ektar 100, Portra 400, and Fuji Superia ranked and reviewed.</p>
 </div>
 <div class="article">
 
   <div class="film-entry">
-    <div class="medal-bar">
-      <div class="medal gold">I</div>
-      <div>
-        <div class="film-rank">Gold Medal · #1</div>
-        <div class="film-name">Kodak Ektar 100</div>
+    <div class="film-header">
+      <div class="film-header-left">
+        <div class="medal gold">I</div>
+        <div>
+          <div class="film-rank">Gold Medal · #1</div>
+          <div class="film-name">Kodak Ektar 100</div>
+        </div>
       </div>
+      <div class="film-box"><img src="/images/top-3-color/ektar.jpg" alt="Kodak Ektar 100 box"></div>
     </div>
     <div class="film-specs">ISO <span>100</span> · Type <span>Color Negative</span> · Grain <span>Extremely Fine</span> · Character <span>Saturated · Contrasty · Vibrant</span></div>
     <div class="film-body"><p>Ektar 100 is the sharpest, most saturated color negative film Kodak makes. In half frame the smaller negative gets magnified more than any other format — and Ektar handles that magnification better than anything else available.</p>
 <p>The ultra-fine grain structure means you can push the tiny 18x24mm negative hard without losing detail. Colors are bold and punchy — reds are red, blues are blue. If you want a film that makes half frame images look as sharp and vivid as possible, this is it.</p>
 <p>My only caveat: Ektar can be unforgiving in harsh midday light. It shines brightest in the golden hour or overcast conditions where its contrast works with the light rather than against it.</p></div>
     <div class="photo-grid">
-      <div class="photo-cell"><img src="/images/top-3-color/ektar.jpg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/02860004-edited.jpeg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/02860016-edited.jpeg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/02860051-edited.jpeg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/02860067-edited.jpeg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/02860072-edited.jpeg" alt="" loading="lazy"></div>
+      <div class="photo-cell"><img src="/images/top-3-color/20730057.jpg" alt="" loading="lazy"></div>
     </div>
     <p style="font-size:11px;opacity:0.4;font-style:italic;margin-bottom:1rem">Shot on Olympus Pen EE2 · San Diego, CA</p>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=kodak+ektar+100" target="_blank" rel="noopener">Buy Ektar 100 →</a>
   </div>
   <div class="film-entry">
-    <div class="medal-bar">
-      <div class="medal silver">II</div>
-      <div>
-        <div class="film-rank">Silver Medal · #2</div>
-        <div class="film-name">Kodak Portra 400</div>
+    <div class="film-header">
+      <div class="film-header-left">
+        <div class="medal silver">II</div>
+        <div>
+          <div class="film-rank">Silver Medal · #2</div>
+          <div class="film-name">Kodak Portra 400</div>
+        </div>
       </div>
+      <div class="film-box"><img src="/images/top-3-color/porta400.jpg" alt="Kodak Portra 400 box"></div>
     </div>
     <div class="film-specs">ISO <span>400</span> · Type <span>Color Negative</span> · Grain <span>Fine for 400 ISO</span> · Character <span>Muted · Consistent · Flattering</span></div>
     <div class="film-body"><p>Portra 400 is a lot of people's favorite film in any format, and with good reason. It is forgiving as heck, has nice fine grain for ISO 400, and has a beautiful muted color palette that happens to be very much in right now.</p>
-<p>The consistency of results is the best thing and simultaneously the worst thing about this film. You always get good to great results, but you never get any fun surprises or wild contrast. That being said I still turn to this film fairly often, especially when I want a consistent look across a series I am working on.</p>
+<p>The consistency of results is the best thing and simultaneously the worst thing about this film. You always get good to great results, but you never get any fun surprises or wild contrast.</p>
 <p>If you are planning to shoot portraits or people, this is the clear choice.</p></div>
     <div class="photo-grid">
-      <div class="photo-cell"><img src="/images/top-3-color/porta400.jpg" alt="" loading="lazy"></div>
-      <div class="photo-cell"><img src="/images/top-3-color/20730057.jpg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/20730062.jpg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/20730077.jpg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/57500006-edited.jpeg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/57500020-edited.jpeg" alt="" loading="lazy"></div>
+      <div class="photo-cell"><img src="/images/top-3-color/57500051-edited.jpeg" alt="" loading="lazy"></div>
+      <div class="photo-cell"><img src="/images/top-3-color/57500066.jpg" alt="" loading="lazy"></div>
     </div>
     <p style="font-size:11px;opacity:0.4;font-style:italic;margin-bottom:1rem">Shot on Canon Auto Tele 6 · San Diego, CA</p>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=kodak+portra+400" target="_blank" rel="noopener">Buy Portra 400 →</a>
   </div>
   <div class="film-entry">
-    <div class="medal-bar">
-      <div class="medal bronze">III</div>
-      <div>
-        <div class="film-rank">Bronze Medal · #3</div>
-        <div class="film-name">Fuji Superia 400</div>
+    <div class="film-header">
+      <div class="film-header-left">
+        <div class="medal bronze">III</div>
+        <div>
+          <div class="film-rank">Bronze Medal · #3</div>
+          <div class="film-name">Fuji Superia 400</div>
+        </div>
       </div>
+      <div class="film-box"><img src="/images/top-3-color/fuji-superia-400.jpg" alt="Fuji Superia 400 box"></div>
     </div>
     <div class="film-specs">ISO <span>400</span> · Type <span>Color Negative</span> · Grain <span>Fine for 400 ISO</span> · Character <span>Cool · Green Tones · Budget Friendly</span></div>
     <div class="film-body"><p>Fuji Superia 400 is my budget pick and honestly punches way above its price point. The colors lean slightly cool and green compared to Kodak films which gives it a distinctive look that works particularly well for street and travel photography.</p>
 <p>The grain is well controlled for a 400 ISO film and it handles a wide range of lighting conditions gracefully. It is widely available, inexpensive, and consistent.</p>
-<p>If you are new to half frame and want to run a lot of rolls without breaking the bank, start here. Once you know what you like you can move up to Ektar or Portra.</p></div>
+<p>If you are new to half frame and want to run a lot of rolls without breaking the bank, start here.</p></div>
     <div class="photo-grid">
-      <div class="photo-cell"><img src="/images/top-3-color/fuji-superia-400.jpg" alt="" loading="lazy"></div>
-      <div class="photo-cell"><img src="/images/top-3-color/57500051-edited.jpeg" alt="" loading="lazy"></div>
-      <div class="photo-cell"><img src="/images/top-3-color/57500066.jpg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/57500070-edited.jpeg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/57500072-edited.jpeg" alt="" loading="lazy"></div>
       <div class="photo-cell"><img src="/images/top-3-color/57510014-edited.jpeg" alt="" loading="lazy"></div>
+      <div class="photo-cell"><img src="/images/top-3-color/57510018-edited.jpeg" alt="" loading="lazy"></div>
+      <div class="photo-cell"><img src="/images/top-3-color/57510063-1-edited.jpeg" alt="" loading="lazy"></div>
+      <div class="photo-cell"><img src="/images/top-3-color/76030010-edited.jpeg" alt="" loading="lazy"></div>
     </div>
     <p style="font-size:11px;opacity:0.4;font-style:italic;margin-bottom:1rem">Shot on Olympus Pen EE2 · Various locations</p>
     <a class="buy-link" href="https://www.bhphotovideo.com/c/search?Ntt=fuji+superia+400" target="_blank" rel="noopener">Buy Fuji Superia 400 →</a>
