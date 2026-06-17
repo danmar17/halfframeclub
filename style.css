@@ -226,6 +226,27 @@ section {
 }
 
 /* ============================================================
+   MANIFESTO
+   ============================================================ */
+.manifesto-body {
+  max-width: 680px;
+}
+.manifesto-body p {
+  font-size: 16px;
+  line-height: 1.9;
+  opacity: 0.8;
+  margin-bottom: 1.25rem;
+}
+.manifesto-signature {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--teal);
+  opacity: 1 !important;
+  margin-top: 1.5rem;
+}
+
+/* ============================================================
    CARDS
    ============================================================ */
 .cards-grid {
