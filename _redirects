@@ -1,0 +1,34 @@
+# www -> apex (already enforced at the Cloudflare edge; defined here explicitly too)
+https://www.halfframeclub.com/* https://halfframeclub.com/:splat 301!
+
+# Legacy duplicate camera review pages -> canonical root pages
+/reviews/795-184536.html /795-184536 301
+/reviews/795-184536 /795-184536 301
+/reviews/795.html /795 301
+/reviews/795 /795 301
+/reviews/agat18k.html /agat18k 301
+/reviews/agat18k /agat18k 301
+/reviews/canon_auto_tele.html /canon_auto_tele 301
+/reviews/canon_auto_tele /canon_auto_tele 301
+/reviews/canondemi.html /canondemi 301
+/reviews/canondemi /canondemi 301
+/reviews/chaika2.html /chaika2 301
+/reviews/chaika2 /chaika2 301
+/reviews/ektarh35.html /ektarh35 301
+/reviews/ektarh35 /ektarh35 301
+/reviews/fujicahalf.html /fujicahalf 301
+/reviews/fujicahalf /fujicahalf 301
+/reviews/olympus-pen-eed.html /olympus-pen-eed 301
+/reviews/olympus-pen-eed /olympus-pen-eed 301
+/reviews/olympuspeneereview.html /olympuspeneereview 301
+/reviews/olympuspeneereview /olympuspeneereview 301
+/reviews/olympuspenft.html /olympuspenft 301
+/reviews/olympuspenft /olympuspenft 301
+/reviews/oympus-pen-f.html /oympus-pen-f 301
+/reviews/oympus-pen-f /oympus-pen-f 301
+/reviews/yashicasamurai.html /yashicasamurai 301
+/reviews/yashicasamurai /yashicasamurai 301
+
+# Legacy duplicate artist page -> canonical /artists/ page
+/mike-dinsmore.html /artists/mike-dinsmore 301
+/mike-dinsmore /artists/mike-dinsmore 301
