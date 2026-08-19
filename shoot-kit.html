@@ -43,6 +43,7 @@
   h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px,5vw,62px); font-weight: 300; line-height: 1.05; margin-bottom: 0.75rem; color: var(--black); }
   h1 em { font-style: italic; color: var(--gold); }
   .page-sub { font-size: 15px; opacity: 0.55; line-height: 1.85; max-width: 520px; }
+  .finder-cta { border: 0.5px solid var(--border-gold); background: rgba(232,160,32,0.04); margin: 0 3rem 2.5rem; padding: 2.5rem 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
   .filter-bar { display: flex; border-bottom: 0.5px solid var(--border); padding: 0 3rem; overflow-x: auto; }
   .filter-btn { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 1rem 1.5rem; cursor: pointer; opacity: 0.45; border: none; background: none; color: var(--text); border-bottom: 1.5px solid transparent; margin-bottom: -0.5px; white-space: nowrap; font-family: 'Jost', sans-serif; transition: opacity 0.2s; }
   .filter-btn:hover { opacity: 0.8; }
@@ -96,6 +97,7 @@
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
     .page-header { padding: 5.5rem 1.5rem 2rem; }
+    .finder-cta { margin: 0 1.5rem 2rem; padding: 2rem; flex-direction: column; align-items: flex-start; }
     .filter-bar { padding: 0 1.5rem; }
     .content-section { border-top: 2px solid var(--teal); padding: 3rem 1.5rem; }
     .cameras-grid { grid-template-columns: 1fr; }
@@ -129,6 +131,14 @@
   <span class="section-label">Shoot &amp; Kit</span>
   <h1>Cameras, Film<br>&amp; <em>Everything Between</em></h1>
   <p class="page-sub">Every camera reviewed in depth, two film guides, and a complete breakdown of every Olympus Pen half frame ever made.</p>
+</div>
+<div class="finder-cta">
+  <div>
+    <span class="section-label" style="margin-bottom:0.4rem;display:block">Not Sure Where to Start?</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;color:var(--black);margin-bottom:0.5rem">Find Your Half Frame</h2>
+    <p style="font-size:14px;opacity:0.55;line-height:1.8;max-width:480px;margin:0">Browse every half frame camera we know about by type and control level — SLR, viewfinder, rangefinder, or digital — and land on the ones that actually fit what you want.</p>
+  </div>
+  <a href="/camera-quiz.html" class="btn" style="white-space:nowrap">Try the Camera Finder →</a>
 </div>
 <div class="filter-bar">
   <button class="filter-btn active" data-filter="all">All</button>
