@@ -7,7 +7,7 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-display_url: https://halfframeclub.com
+display_url: https://www.halfframeclub.com
 logo_url: /images/hfc-logo.png
 
 collections:
