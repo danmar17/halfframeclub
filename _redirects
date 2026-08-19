@@ -1,6 +1,22 @@
 # www -> apex (already enforced at the Cloudflare edge; defined here explicitly too)
 https://www.halfframeclub.com/* https://halfframeclub.com/:splat 301!
 
+# Legacy Weebly journal URLs -> closest modern equivalent.
+# These were confirmed 404ing rather than redirecting, so any ranking
+# history they carried was being lost instead of transferred.
+/journal/my-olympus-pen-f-review-by-tobias-eriksson /oympus-pen-f.html 301
+/journal/canon-demi-c-review-a-personal-take-by-tobias-eriksson /canondemi.html 301
+/journal/archives/* /journal.html 301
+/journal/category/* /journal.html 301
+/journal /journal.html 301
+
+# NOTE: the extension-less vs .html duplicate (e.g. /agat18k vs
+# /agat18k.html both serving identical content) is NOT a _redirects fix
+# -- it's Cloudflare Pages' automatic "clean URLs" feature. Turn it off
+# in the Pages project settings (Settings -> Builds & deployments ->
+# disable automatic clean URLs), not here, or the duplicate regenerates
+# for every new page automatically.
+
 # Legacy duplicate camera review pages -> canonical root pages
 /reviews/795-184536.html /795-184536 301
 /reviews/795-184536 /795-184536 301
