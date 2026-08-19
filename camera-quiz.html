@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="half frame camera finder, which half frame camera, olympus pen, half frame camera list, half frame slr, half frame rangefinder">
+<meta name="description" content="Browse every half frame camera by type and control level — SLR, viewfinder, rangefinder, and digital — with links to HFC reviews or further reading for each.">
+<title>Camera Finder — Half Frame Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#E8A020;--teal:#1A9E9E;--black:#0a0a0a;--bg:#FDFCFA;--text:#1a1a1a;--mid:#F0EDE6;--border:rgba(26,26,26,0.12);--border-gold:rgba(232,160,32,0.4)}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);font-weight:300;line-height:1.7;font-size:16px}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(253,252,250,0.96);backdrop-filter:blur(10px);border-bottom:6px solid var(--black);box-shadow:0 6px 0 #E8A020}
+  .nav-logo{text-decoration:none;flex-shrink:0;display:flex;align-items:center}
+  .nav-logo img{height:34px;width:auto;display:block;opacity:0.9}
+  .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+  .nav-links a{font-size:13px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.6;transition:opacity 0.2s,color 0.2s;white-space:nowrap}
+  .nav-links a:hover{opacity:1;color:var(--gold)}
+  .nav-right{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);text-decoration:none;opacity:0.75;flex-shrink:0}
+  .nav-right:hover{opacity:1}
+
+  .page-header{padding:6rem 3rem 2.5rem;border-bottom:0.5px solid var(--border)}
+  .section-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;display:block}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,60px);font-weight:300;line-height:1.05;margin-bottom:0.75rem;color:var(--black)}
+  h1 em{font-style:italic;color:var(--gold)}
+  .page-sub{font-size:15px;opacity:0.55;line-height:1.85;max-width:560px}
+
+  main{padding:3rem;min-height:50vh}
+  @media(max-width:900px){ main{padding:2rem 1.5rem} }
+
+  /* breadcrumb + back */
+  .cf-topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem}
+  .cf-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:0.4rem;font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+  .cf-breadcrumb a{color:var(--teal);text-decoration:none;opacity:0.85}
+  .cf-breadcrumb a:hover{opacity:1;text-decoration:underline}
+  .cf-breadcrumb .sep{opacity:0.3}
+  .cf-breadcrumb .current{color:var(--black);opacity:0.55}
+  .cf-back{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:0.45;transition:opacity 0.2s,color 0.2s;white-space:nowrap}
+  .cf-back:hover{opacity:1;color:var(--gold)}
+
+  /* home: branch cards */
+  .cf-branch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+  .cf-branch-card{border:0.5px solid var(--border);padding:2.5rem 1.75rem;text-align:left;cursor:pointer;background:var(--bg);transition:border-color 0.2s;text-decoration:none;color:var(--text);display:block}
+  .cf-branch-card:hover{border-color:var(--border-gold)}
+  .cf-branch-card h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--black);margin-bottom:0.6rem}
+  .cf-branch-card p{font-size:13px;opacity:0.5;line-height:1.7;margin:0}
+  .cf-branch-count{font-size:10px;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-top:1rem;display:block}
+  @media(max-width:900px){ .cf-branch-grid{grid-template-columns:1fr 1fr} }
+  @media(max-width:600px){ .cf-branch-grid{grid-template-columns:1fr} }
+
+  /* tier list */
+  .cf-tier-list{display:flex;flex-direction:column}
+  .cf-tier-row{display:flex;justify-content:space-between;align-items:center;padding:1.6rem 0;border-bottom:0.5px solid var(--border);cursor:pointer;text-decoration:none;color:var(--text);transition:padding-left 0.2s}
+  .cf-tier-row:hover{padding-left:0.5rem}
+  .cf-tier-row:hover .cf-tier-name{color:var(--gold)}
+  .cf-tier-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--black);transition:color 0.2s}
+  .cf-tier-meta{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+  .cf-tier-count{font-size:11px;opacity:0.4;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap}
+  .cf-tier-arrow{opacity:0.3;font-size:15px}
+
+  /* origin filter */
+  .cf-origin-grid{display:flex;gap:1rem;flex-wrap:wrap}
+  .cf-origin-card{border:0.5px solid var(--border);padding:1.75rem 2rem;cursor:pointer;text-decoration:none;color:var(--text);flex:1;min-width:180px;text-align:center;transition:border-color 0.2s}
+  .cf-origin-card:hover{border-color:var(--border-gold)}
+  .cf-origin-name{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--black);display:block;margin-bottom:0.3rem}
+  .cf-origin-count{font-size:11px;opacity:0.4;letter-spacing:0.06em;text-transform:uppercase}
+
+  /* final camera cards */
+  .cf-final-heading{margin-bottom:2rem}
+  .cf-final-heading h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--black)}
+  .cf-camera-card{border:0.5px solid var(--border);padding:1.85rem 2.25rem;margin-bottom:1.25rem}
+  .cf-camera-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:0.5rem;flex-wrap:wrap}
+  .cf-camera-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--black)}
+  .cf-camera-tag{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.6rem;border:0.5px solid var(--border-gold);color:var(--gold);white-space:nowrap;flex-shrink:0}
+  .cf-camera-tag.unreviewed{color:var(--teal);border-color:rgba(26,158,158,0.35)}
+  .cf-camera-note{font-size:13px;opacity:0.55;line-height:1.75;margin-bottom:1.25rem}
+  .cf-camera-actions{display:flex;align-items:center;flex-wrap:wrap;gap:1.25rem 1.5rem}
+  .cf-link-btn{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);text-decoration:none;opacity:0.85}
+  .cf-link-btn:hover{opacity:1;text-decoration:underline}
+  .cf-ebay-btn{display:inline-block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;padding:0.75rem 1.5rem;border:0.5px solid var(--gold);color:var(--gold);text-decoration:none;background:transparent;cursor:pointer;transition:background 0.25s,color 0.25s;white-space:nowrap}
+  .cf-ebay-btn:hover{background:var(--gold);color:var(--black)}
+  .cf-disclosure{font-size:10px;opacity:0.4;margin-top:0.5rem;line-height:1.6}
+
+  .cf-footnote{background:var(--mid);padding:1.5rem 2rem;font-size:13px;opacity:0.65;line-height:1.8;margin-top:1.5rem;border-left:2px solid var(--gold)}
+  .cf-trivia{background:var(--mid);padding:1.75rem 2rem;font-size:13px;opacity:0.65;line-height:1.85;margin-top:2rem;border-left:2px solid var(--teal)}
+  .cf-trivia-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);opacity:1;display:block;margin-bottom:0.5rem}
+
+  footer{padding:1.75rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--teal);border-top:9px solid #E8A020}
+  .footer-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
+  .footer-links{display:flex;gap:1.75rem;list-style:none}
+  .footer-links a{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#E8A020;text-decoration:none;opacity:1;font-weight:500;transition:opacity 0.2s,color 0.2s}
+  .footer-links a:hover{opacity:0.8}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,0.8);font-weight:400}
+
+  @media(max-width:900px){
+    nav{padding:1rem 1.5rem} .nav-links{display:none}
+    .page-header{padding:5.5rem 1.5rem 2rem}
+    .cf-camera-top{flex-direction:column;align-items:flex-start}
+    footer{flex-direction:column;gap:1.25rem;text-align:center}
+    .footer-links{flex-wrap:wrap;justify-content:center}
+  }
+</style>
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Camera Finder — Half Frame Club">
+<meta property="og:description" content="Browse every half frame camera by type and control level, with links to reviews or further reading.">
+<meta property="og:site_name" content="Half Frame Club">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><img src="/images/hfc-logo.png" alt="Half Frame Club"></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+  </ul>
+  <a class="nav-right" href="https://www.instagram.com/halfframeclub/" target="_blank" rel="noopener">@halfframeclub</a>
+</nav>
+
+<div class="page-header">
+  <span class="section-label">Camera Finder</span>
+  <h1>Find Your <em>Half Frame</em></h1>
+  <p class="page-sub">Pick a camera type, narrow by how much control it gives you, and land on the actual cameras that fit. Every half frame camera we know about lives in here — reviewed ones link to the full HFC writeup, the rest link out to further reading.</p>
+</div>
+
+<main id="app"></main>
+
+<footer>
+  <div class="footer-logo"><img src="/images/hfc-logo.png" alt="Half Frame Club" style="height:26px;width:auto;filter:brightness(0) invert(1);opacity:0.9"></div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/shoot-kit.html">Shoot &amp; Kit</a></li>
+    <li><a href="/journal.html">Journal</a></li>
+    <li><a href="/darkroom.html">Darkroom</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© HFC 2025</div>
+</footer>
+
+<script>
+/* ============================================================
+   HFC CAMERA FINDER — decision-tree navigator
+   Branch -> (Tier) -> (Origin, Viewfinder only) -> Camera(s)
+   ============================================================ */
+
+const EBAY_SUFFIX = 'mkcid=1&mkrid=711-53200-19255-0&toolid=20023&campid=5339192031';
+
+function buildEbayUrl(search, customid) {
+  const nkw = search.trim().replace(/\s+/g, '+');
+  return `https://www.ebay.com/sch/i.html?_nkw=${nkw}&${EBAY_SUFFIX}&customid=${customid}&siteid=0&mkevt=1`;
+}
+
+function slug(s) {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/* ------------------------------------------------------------
+   DATA
+   ------------------------------------------------------------ */
+const DATA = {
+  slr: {
+    label: 'SLR',
+    blurb: 'Through-the-lens viewing, interchangeable focus screens, the works.',
+    tiers: [
+      {
+        name: 'Auto Exposure/Autofocus',
+        cameras: [
+          { name: 'Yashica Samurai', reviewed: true, hfc_page: 'yashicasamurai.html', ebay_search: 'yashica samurai', customid: 'yashica-samurai' }
+        ]
+      },
+      {
+        name: 'Auto Exposure',
+        cameras: [
+          { name: 'Konica Auto Rex', reviewed: false, ebay_search: 'konica autorex', customid: 'konica-autorex', external_link: 'https://www.35mmc.com/09/07/2025/konica-autorex-shooting-full-and-half-frames-on-the-same-roll-of-film/', note: 'Only SLR that switches between full-frame and half-frame mid-roll via a masking lever. Shutter-priority auto exposure.' }
+        ]
+      },
+      {
+        name: 'Metered Manual',
+        cameras: [
+          { name: 'Olympus Pen FT', reviewed: true, hfc_page: 'olympuspenft.html', ebay_search: 'olympus pen ft', customid: 'pen-ft' }
+        ]
+      },
+      {
+        name: 'Full Manual',
+        cameras: [
+          { name: 'Olympus Pen F', reviewed: true, hfc_page: 'oympus-pen-f.html', ebay_search: 'olympus pen f', customid: 'pen-f' },
+          { name: 'Olympus Pen FV', reviewed: false, ebay_search: 'olympus pen fv', customid: 'pen-fv', external_link: 'https://www.subclub.org/shop/penf.htm', note: 'Pen FT with the meter removed — cheaper, brighter viewfinder.' }
+        ]
+      }
+    ]
+  },
+
+  viewfinder: {
+    label: 'Viewfinder',
+    blurb: 'No reflex mirror — compose through a simple window. Most of the format lives here.',
+    tiers: [
+      {
+        name: 'Full Manual (no meter)',
+        origins: {
+          Japanese: [
+            { name: 'Olympus Pen S', reviewed: false, ebay_search: 'olympus pen s', customid: 'pen-s', external_link: 'https://www.subclub.org/shop/olympus.htm' },
+            { name: 'Olympus Pen W', reviewed: false, ebay_search: 'olympus pen w', customid: 'pen-w', external_link: 'https://www.subclub.org/shop/olympus.htm' },
+            { name: 'Petri Half', reviewed: false, ebay_search: 'petri half camera', customid: 'petri-half', external_link: 'https://www.subclub.org/shop/petri.htm' }
+          ],
+          Soviet: [
+            { name: 'Agat 18K', reviewed: true, hfc_page: 'agat18k.html', ebay_search: 'agat 18k', customid: 'agat-18k' },
+            { name: 'Agat 18 (A/B/C)', reviewed: false, ebay_search: 'agat 18 camera', customid: 'agat-18', external_link: 'https://www.subclub.org/shop/mmz.htm', note: 'Predecessor to the 18K — three minor variants.' },
+            { name: 'Chaika (original, 1965)', reviewed: false, ebay_search: 'chaika camera vintage', customid: 'chaika-1', external_link: 'https://www.subclub.org/shop/mmz.htm' },
+            { name: 'Chaika II', reviewed: true, hfc_page: 'chaika2.html', ebay_search: 'chaika 2', customid: 'chaika-2' },
+            { name: 'Chaika 2M', reviewed: false, ebay_search: 'chaika 2m', customid: 'chaika-2m', external_link: 'https://www.subclub.org/shop/mmz.htm' }
+          ],
+          Other: [
+            { name: 'Agfa Parat I', reviewed: false, ebay_search: 'agfa parat', customid: 'agfa-parat-1', external_link: 'https://www.subclub.org/shop/agfa.htm' }
+          ]
+        }
+      },
+      {
+        name: 'Metered Manual',
+        origins: {
+          Soviet: [
+            { name: 'Chaika 3', reviewed: false, ebay_search: 'chaika 3 camera', customid: 'chaika-3', external_link: 'https://www.subclub.org/shop/mmz.htm' },
+            { name: 'FED Micron', reviewed: false, ebay_search: 'fed micron camera', customid: 'fed-micron', external_link: 'https://camera-wiki.org/wiki/FED_Micron' },
+            { name: 'Orbita', reviewed: false, ebay_search: 'mmz orbita camera', customid: 'orbita', external_link: 'https://www.subclub.org/shop/mmz.htm' }
+          ],
+          Japanese: [
+            { name: 'Petri Compact E', reviewed: false, ebay_search: 'petri compact e', customid: 'petri-compact-e', external_link: 'https://www.subclub.org/shop/petri.htm' },
+            { name: 'Olympus Pen D', reviewed: false, ebay_search: 'olympus pen d', customid: 'pen-d', external_link: 'https://www.subclub.org/shop/pend.htm' },
+            { name: 'Olympus Pen D2/D3/D3 EL', reviewed: false, ebay_search: 'olympus pen d3', customid: 'pen-d-family', external_link: 'https://www.subclub.org/shop/pend.htm' },
+            { name: 'Minolta Repo', reviewed: true, hfc_page: '795-184536.html', ebay_search: 'minolta repo', customid: 'minolta-repo', note: 'Covers all three Repo versions (original, updated, Repo-S).' },
+            { name: 'Dial 35', reviewed: false, ebay_search: 'canon dial 35', customid: 'dial-35' },
+            { name: 'Canon Demi', reviewed: true, hfc_page: 'canondemi.html', ebay_search: 'canon demi', customid: 'canon-demi' },
+            { name: 'Canon Demi 1.7', reviewed: false, ebay_search: 'canon demi 1.7', customid: 'canon-demi-17' },
+            { name: 'Ricoh Caddy', reviewed: false, ebay_search: 'ricoh caddy camera', customid: 'ricoh-caddy', external_link: 'http://www.subclub.org/shop/caddy.htm' },
+            { name: 'Yashica Rapide/Sequelle/72-E', reviewed: false, ebay_search: 'yashica 72-e', customid: 'yashica-early', external_link: 'http://www.subclub.org/shop/yashica.htm', note: 'Earlier Yashica half-frames, predecessors to the Mimy.' }
+          ]
+        }
+      },
+      {
+        /* Spec gives this tier as a flat list (no Soviet/Japanese/Other split),
+           even though it mixes origins (mostly Japanese, one German). Per the
+           UI rule "skip the origin step for tiers with only one origin
+           represented," we treat "no origin data given" the same way and
+           skip straight to the camera list. */
+        name: 'Program Auto Exposure',
+        cameras: [
+          { name: 'Olympus Pen EES', reviewed: false, ebay_search: 'olympus pen ees', customid: 'pen-ees' },
+          { name: 'Olympus Pen EES2', reviewed: false, ebay_search: 'olympus pen ees2', customid: 'pen-ees2' },
+          { name: 'Olympus Pen EED', reviewed: true, hfc_page: 'olympus-pen-eed.html', ebay_search: 'olympus pen eed', customid: 'pen-eed' },
+          { name: 'Petri Half 17', reviewed: false, ebay_search: 'petri half 17', customid: 'petri-half-17', external_link: 'https://www.subclub.org/shop/petri17.htm' },
+          { name: 'Yashica Half 17', reviewed: false, ebay_search: 'yashica half 17', customid: 'yashica-half-17', external_link: 'https://camera-wiki.org/wiki/Yashica_Half_17' },
+          { name: 'Yashica Half 14', reviewed: false, ebay_search: 'yashica half 14', customid: 'yashica-half-14', external_link: 'http://www.subclub.org/shop/yahalf14.htm' },
+          { name: 'Yashica Electro Half', reviewed: false, ebay_search: 'yashica electro half', customid: 'yashica-electro-half', external_link: 'https://camera-wiki.org/wiki/Yashica_Electro_Half', note: 'True aperture-priority AE via electronic shutter.' },
+          { name: 'Agfa Optima Parat', reviewed: false, ebay_search: 'agfa optima parat', customid: 'agfa-optima-parat', external_link: 'https://elekm.net/pages/cameras/parat.htm' },
+          { name: 'Konica Eye', reviewed: false, ebay_search: 'konica eye camera', customid: 'konica-eye', external_link: 'https://www.subclub.org/shop/konica.htm' },
+          { name: 'Ricoh Auto Half SL', reviewed: false, ebay_search: 'ricoh auto half sl', customid: 'ricoh-auto-half-sl', external_link: 'https://www.135compact.com/135_half_ricoh_auto_half_sl.htm' },
+          { name: 'Olympus Pen EF', reviewed: false, ebay_search: 'olympus pen ef', customid: 'pen-ef', external_link: 'https://www.subclub.org/shop/pene.htm' },
+          { name: 'Konica EYE 2', reviewed: false, ebay_search: 'konica eye 2', customid: 'konica-eye-2', external_link: 'https://www.subclub.org/shop/konica.htm' },
+          { name: 'Pentax 17', reviewed: false, ebay_search: 'pentax 17 camera', customid: 'pentax-17', external_link: 'https://www.ricoh-imaging.co.jp/english/products/pentax17/', note: 'New production, zone focus + auto exposure. Buy new, no vintage gamble.' }
+        ]
+      },
+      {
+        name: 'Full Auto',
+        cameras: [
+          { name: 'Canon Auto Tele 6', reviewed: true, hfc_page: 'canon_auto_tele.html', ebay_search: 'canon auto tele 6', customid: 'canon-auto-tele', note: 'Also switches between full-frame and half-frame mid-roll, same trick as Konica Autorex.' },
+          { name: 'Olympus Pen EM', reviewed: false, ebay_search: 'olympus pen em', customid: 'pen-em', external_link: 'https://www.subclub.org/shop/pene.htm' },
+          { name: 'Konica AA-35', reviewed: false, ebay_search: 'konica aa-35', customid: 'konica-aa35', external_link: 'https://www.subclub.org/shop/konica.htm' }
+        ]
+      },
+      {
+        name: 'Fixed Focus Auto',
+        cameras: [
+          { name: 'Olympus Pen EE', reviewed: true, hfc_page: 'olympuspeneereview.html', ebay_search: 'olympus pen ee', customid: 'pen-ee' },
+          { name: 'Olympus Pen EEL', reviewed: false, ebay_search: 'olympus pen eel', customid: 'pen-eel' },
+          { name: 'Olympus Pen EE-2', reviewed: false, ebay_search: 'olympus pen ee-2', customid: 'pen-ee2' },
+          { name: 'Yashica Mimy', reviewed: false, ebay_search: 'yashica mimy', customid: 'yashica-mimy' },
+          { name: 'Ricoh Auto Half', reviewed: true, hfc_page: '795.html', ebay_search: 'ricoh auto half', customid: 'ricoh-auto-half', note: 'Covers the E/E2/S/SE variant family, same core spec.' },
+          { name: 'Silhouette Rapid Auto', reviewed: false, ebay_search: 'mmz silhouette rapid auto', customid: 'silhouette-rapid-auto', external_link: 'http://www.subclub.org/shop/mmz.htm' },
+          { name: 'Agfa Automatic Parat', reviewed: false, ebay_search: 'agfa automatic parat', customid: 'agfa-automatic-parat', external_link: 'http://www.subclub.org/shop/agfa.htm' }
+        ]
+      },
+      {
+        name: 'Fixed Focus, Fixed Exposure',
+        cameras: [
+          /* TODO(dan): "ektarh35.html" is written as the first-gen H35 review.
+             The H35N (Dan's primary shooter since 2023, ~6 rolls logged) is
+             getting its own follow-up review. Once that page exists, point
+             this entry's hfc_page at it instead of ektarh35.html. */
+          { name: 'Kodak Ektar H35N', reviewed: true, hfc_page: 'ektarh35.html', ebay_search: 'reto kodak h35', customid: 'kodak-h35', note: 'Currently mapped to the H35 review page — an H35N-specific follow-up review is planned.' },
+          { name: 'Superheadz Golden Half', reviewed: false, ebay_search: 'superheadz golden half', customid: 'golden-half', external_link: 'https://www.subclub.org/shop/superheadz.htm' },
+          { name: 'Lomography Simple Use Reloadable (Half-Frame)', reviewed: false, ebay_search: 'lomography simple use half frame', customid: 'lomo-half-frame', external_link: 'https://www.lomography.com/' }
+        ],
+        /* TODO(dan): deliberately excluding the cluster of near-identical
+           rebadged 2020s toy half-frames (Awopzzy, BHF-01, Corex, Hayamou,
+           Kipliki, Ninoco, One Shot, Yulanbi) as individual nodes — flag
+           here in case these should get their own entries later. */
+        footnote: 'A cluster of nearly-identical rebadged toy half-frames also exists under names like Awopzzy, BHF-01, Corex, Hayamou, Kipliki, Ninoco, One Shot, and Yulanbi — same spec, different badges, not worth separate entries here.'
+      }
+    ]
+  },
+
+  rangefinder: {
+    label: 'Rangefinder',
+    blurb: 'Rare, mostly one-offs and short runs. Fun to know about, hard to own.',
+    flat: true,
+    cameras: [
+      { name: 'Leica 72', reviewed: false, ebay_search: 'leica 72 half frame', customid: 'leica-72', external_link: 'https://www.pacificrimcamera.com/pp/leica72.htm', note: 'Modified Leica IIIa/IIIg body. Only 183 ever made (150 Canada, 33 Germany).' },
+      { name: 'Ducati Sogno', reviewed: false, ebay_search: 'ducati sogno camera', customid: 'ducati-sogno', external_link: 'https://mikeeckman.com/2025/04/ducati-sogno-1947/', note: 'Interchangeable-lens half-frame rangefinder from the motorcycle company. ~10,000 made 1946-52.' },
+      { name: 'Nikon S3M', reviewed: false, ebay_search: 'nikon s3m', customid: 'nikon-s3m', external_link: 'https://en.wikipedia.org/wiki/Nikon_S3M', note: 'Only 195 made 1960-61. Extremely rare, extremely expensive when it does surface.' }
+    ],
+    trivia: 'Leica tried twice more to crack half-frame and never shipped either attempt: the Leicaflex 18×24 half-frame SLR (only one complete unit was ever finished) and the Leica-H half-frame rangefinder (three prototypes, never sold). Both live in private collections and museums today.'
+  },
+
+  digital: {
+    label: 'Digital',
+    blurb: 'The format is coming back in digital form. One entry so far.',
+    flat: true,
+    cameras: [
+      { name: 'Fujifilm X Half', reviewed: true, hfc_page: 'fujixhalf.html', ebay_search: 'fujifilm x half', customid: 'fuji-x-half', note: 'No tiers here yet — first entry in what may become its own digital-half-frame branch as more appear.' }
+    ]
+  }
+};
+
+const BRANCH_ORDER = ['slr', 'viewfinder', 'rangefinder', 'digital'];
+
+/* ------------------------------------------------------------
+   ROUTING
+   ------------------------------------------------------------ */
+function getParts() {
+  return (location.hash || '').replace(/^#\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
+}
+
+function countCameras(node) {
+  if (Array.isArray(node)) return node.length;
+  if (node.origins) return Object.values(node.origins).reduce((n, arr) => n + arr.length, 0);
+  if (node.cameras) return node.cameras.length;
+  return 0;
+}
+
+function resolveState() {
+  const parts = getParts();
+  if (parts.length === 0) return { screen: 'home' };
+
+  const branchKey = parts[0];
+  const branch = DATA[branchKey];
+  if (!branch) return { screen: 'home' };
+
+  if (branch.flat) {
+    return { screen: 'final', branchKey, branch, cameras: branch.cameras, footnote: branch.footnote, trivia: branch.trivia, crumbs: [], parentHash: '' };
+  }
+
+  if (parts.length < 2) {
+    return { screen: 'tiers', branchKey, branch };
+  }
+
+  const tierSlug = parts[1];
+  const tier = branch.tiers.find(t => slug(t.name) === tierSlug);
+  if (!tier) return { screen: 'tiers', branchKey, branch };
+
+  if (tier.origins) {
+    const originKeys = Object.keys(tier.origins);
+    if (originKeys.length === 1) {
+      const only = originKeys[0];
+      return { screen: 'final', branchKey, branch, tier, cameras: tier.origins[only], footnote: tier.footnote, crumbs: [{ label: tier.name, hash: null }], parentHash: branchKey };
+    }
+    if (parts.length < 3) {
+      return { screen: 'origins', branchKey, branch, tier, tierSlug };
+    }
+    const originSlug = parts[2];
+    const originKey = originKeys.find(k => slug(k) === originSlug);
+    if (!originKey) return { screen: 'origins', branchKey, branch, tier, tierSlug };
+    return {
+      screen: 'final', branchKey, branch, tier,
+      cameras: tier.origins[originKey], footnote: tier.footnote,
+      crumbs: [{ label: tier.name, hash: branchKey + '/' + tierSlug }, { label: originKey, hash: null }],
+      parentHash: branchKey + '/' + tierSlug
+    };
+  }
+
+  return { screen: 'final', branchKey, branch, tier, cameras: tier.cameras, footnote: tier.footnote, crumbs: [{ label: tier.name, hash: null }], parentHash: branchKey };
+}
+
+/* ------------------------------------------------------------
+   RENDER HELPERS
+   ------------------------------------------------------------ */
+function breadcrumbBar(branchKey, branchLabel, extraCrumbs, parentHash) {
+  const items = [{ label: 'Home', hash: '' }];
+  if (branchKey) items.push({ label: branchLabel, hash: extraCrumbs && extraCrumbs.length ? branchKey : null });
+  (extraCrumbs || []).forEach(c => items.push(c));
+
+  const crumbHtml = items.map((it, i) => {
+    const sep = i > 0 ? '<span class="sep">/</span>' : '';
+    if (it.hash === null) return `${sep}<span class="current">${esc(it.label)}</span>`;
+    return `${sep}<a href="#${it.hash}">${esc(it.label)}</a>`;
+  }).join('');
+
+  const backHtml = parentHash !== undefined
+    ? `<a class="cf-back" href="#${parentHash}">&larr; Back</a>`
+    : '';
+
+  return `<div class="cf-topbar"><div class="cf-breadcrumb">${crumbHtml}</div>${backHtml}</div>`;
+}
+
+function cameraCard(cam) {
+  const tagHtml = cam.reviewed
+    ? `<span class="cf-camera-tag">Reviewed</span>`
+    : `<span class="cf-camera-tag unreviewed">Not yet reviewed</span>`;
+
+  const noteHtml = cam.note ? `<p class="cf-camera-note">${esc(cam.note)}</p>` : '';
+
+  let primaryLink = '';
+  if (cam.reviewed && cam.hfc_page) {
+    primaryLink = `<a class="cf-link-btn" href="/${esc(cam.hfc_page)}">Read the review &rarr;</a>`;
+  } else if (cam.external_link) {
+    primaryLink = `<a class="cf-link-btn" href="${esc(cam.external_link)}" target="_blank" rel="noopener">Learn more &rarr;</a>`;
+  }
+
+  const ebayUrl = buildEbayUrl(cam.ebay_search, cam.customid);
+
+  return `
+  <div class="cf-camera-card">
+    <div class="cf-camera-top">
+      <span class="cf-camera-name">${esc(cam.name)}</span>
+      ${tagHtml}
+    </div>
+    ${noteHtml}
+    <div class="cf-camera-actions">
+      ${primaryLink}
+      <a class="cf-ebay-btn" href="${ebayUrl}" target="_blank" rel="noopener">Find on eBay &rarr;</a>
+    </div>
+    <p class="cf-disclosure">As an eBay Partner, I may earn a commission from qualifying purchases.</p>
+  </div>`;
+}
+
+/* ------------------------------------------------------------
+   SCREENS
+   ------------------------------------------------------------ */
+function renderHome() {
+  const cards = BRANCH_ORDER.map(key => {
+    const b = DATA[key];
+    const count = b.flat ? b.cameras.length : b.tiers.reduce((n, t) => n + countCameras(t), 0);
+    return `
+    <a class="cf-branch-card" href="#${key}">
+      <h2>${esc(b.label)}</h2>
+      <p>${esc(b.blurb)}</p>
+      <span class="cf-branch-count">${count} camera${count === 1 ? '' : 's'}</span>
+    </a>`;
+  }).join('');
+
+  return `<div class="cf-branch-grid">${cards}</div>`;
+}
+
+function renderTiers(branchKey, branch) {
+  const top = breadcrumbBar(branchKey, branch.label, [], '');
+  const rows = branch.tiers.map(tier => {
+    const count = countCameras(tier);
+    return `
+    <a class="cf-tier-row" href="#${branchKey}/${slug(tier.name)}">
+      <span class="cf-tier-name">${esc(tier.name)}</span>
+      <span class="cf-tier-meta">
+        <span class="cf-tier-count">${count} camera${count === 1 ? '' : 's'}</span>
+        <span class="cf-tier-arrow">&rarr;</span>
+      </span>
+    </a>`;
+  }).join('');
+
+  return `${top}
+    <div class="cf-final-heading"><h2>${esc(branch.label)} — pick a control tier</h2></div>
+    <div class="cf-tier-list">${rows}</div>`;
+}
+
+function renderOrigins(branchKey, branch, tier, tierSlugStr) {
+  const top = breadcrumbBar(branchKey, branch.label, [{ label: tier.name, hash: null }], branchKey);
+  const cards = Object.keys(tier.origins).map(originKey => {
+    const count = tier.origins[originKey].length;
+    return `
+    <a class="cf-origin-card" href="#${branchKey}/${tierSlugStr}/${slug(originKey)}">
+      <span class="cf-origin-name">${esc(originKey)}</span>
+      <span class="cf-origin-count">${count} camera${count === 1 ? '' : 's'}</span>
+    </a>`;
+  }).join('');
+
+  return `${top}
+    <div class="cf-final-heading"><h2>${esc(tier.name)} — pick an origin</h2></div>
+    <div class="cf-origin-grid">${cards}</div>`;
+}
+
+function renderFinal(state) {
+  const { branchKey, branch, cameras, footnote, trivia, crumbs, parentHash } = state;
+  const top = breadcrumbBar(branchKey, branch.label, crumbs, parentHash);
+  const cards = cameras.map(cameraCard).join('');
+  const footnoteHtml = footnote ? `<div class="cf-footnote">${esc(footnote)}</div>` : '';
+  const triviaHtml = trivia ? `<div class="cf-trivia"><span class="cf-trivia-label">Also True, Also Half Frame</span>${esc(trivia)}</div>` : '';
+
+  return `${top}
+    <div class="cf-final-heading"><h2>${esc(branch.label)}</h2></div>
+    ${cards}
+    ${footnoteHtml}
+    ${triviaHtml}`;
+}
+
+/* ------------------------------------------------------------
+   MAIN RENDER
+   ------------------------------------------------------------ */
+function render() {
+  const app = document.getElementById('app');
+  const state = resolveState();
+
+  if (state.screen === 'home') {
+    app.innerHTML = renderHome();
+  } else if (state.screen === 'tiers') {
+    app.innerHTML = renderTiers(state.branchKey, state.branch);
+  } else if (state.screen === 'origins') {
+    app.innerHTML = renderOrigins(state.branchKey, state.branch, state.tier, state.tierSlug);
+  } else {
+    app.innerHTML = renderFinal(state);
+  }
+
+  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+}
+
+window.addEventListener('hashchange', render);
+render();
+</script>
+</body>
+</html>
