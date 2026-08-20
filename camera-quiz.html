@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="half frame camera finder, which half frame camera, olympus pen, half frame camera list, half frame slr, half frame rangefinder">
-<meta name="description" content="Browse every half frame camera by type and control level — SLR, viewfinder, rangefinder, and digital — with links to HFC reviews or further reading for each.">
-<title>Camera Finder — Half Frame Club</title>
+<meta name="description" content="Browse every half frame camera by type and control level (SLR, viewfinder, rangefinder, and digital) with links to HFC reviews or further reading for each.">
+<title>Camera Finder... Half Frame Club</title>
 <link rel="canonical" href="https://www.halfframeclub.com/camera-quiz">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -105,7 +105,7 @@
 </style>
 <link rel="stylesheet" href="/style.css">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Camera Finder — Half Frame Club">
+<meta property="og:title" content="Camera Finder... Half Frame Club">
 <meta property="og:description" content="Browse every half frame camera by type and control level, with links to reviews or further reading.">
 <meta property="og:site_name" content="Half Frame Club">
 </head>
@@ -124,7 +124,7 @@
 <div class="page-header">
   <span class="section-label">Camera Finder</span>
   <h1>Find Your <em>Half Frame</em></h1>
-  <p class="page-sub">Pick a camera type, narrow by how much control it gives you, and land on the actual cameras that fit. Every half frame camera we know about lives in here — reviewed ones link to the full HFC writeup, the rest link out to further reading.</p>
+  <p class="page-sub">Pick a camera type, narrow by how much control it gives you, and land on the actual cameras that fit. Every half frame camera we know about lives in here. Reviewed ones link to the full HFC writeup, the rest link out to further reading.</p>
 </div>
 
 <main id="app"></main>
@@ -143,7 +143,7 @@
 
 <script>
 /* ============================================================
-   HFC CAMERA FINDER — decision-tree navigator
+   HFC CAMERA FINDER... decision-tree navigator
    Branch -> (Tier) -> (Origin, Viewfinder only) -> Camera(s)
    ============================================================ */
 
@@ -192,7 +192,7 @@ const DATA = {
         name: 'Full Manual',
         cameras: [
           { name: 'Olympus Pen F', reviewed: true, hfc_page: 'oympus-pen-f.html', ebay_search: 'olympus pen f', customid: 'pen-f' },
-          { name: 'Olympus Pen FV', reviewed: false, ebay_search: 'olympus pen fv', customid: 'pen-fv', external_link: 'https://www.subclub.org/shop/penf.htm', note: 'Pen FT with the meter removed — cheaper, brighter viewfinder.' }
+          { name: 'Olympus Pen FV', reviewed: false, ebay_search: 'olympus pen fv', customid: 'pen-fv', external_link: 'https://www.subclub.org/shop/penf.htm', note: 'Pen FT with the meter removed... cheaper, brighter viewfinder.' }
         ]
       }
     ]
@@ -200,7 +200,7 @@ const DATA = {
 
   viewfinder: {
     label: 'Viewfinder',
-    blurb: 'No reflex mirror — compose through a simple window. Most of the format lives here.',
+    blurb: 'No reflex mirror. Compose through a simple window. Most of the format lives here.',
     tiers: [
       {
         name: 'Full Manual (no meter)',
@@ -212,7 +212,7 @@ const DATA = {
           ],
           Soviet: [
             { name: 'Agat 18K', reviewed: true, hfc_page: 'agat18k.html', ebay_search: 'agat 18k', customid: 'agat-18k' },
-            { name: 'Agat 18 (A/B/C)', reviewed: false, ebay_search: 'agat 18 camera', customid: 'agat-18', external_link: 'https://www.subclub.org/shop/mmz.htm', note: 'Predecessor to the 18K — three minor variants.' },
+            { name: 'Agat 18 (A/B/C)', reviewed: false, ebay_search: 'agat 18 camera', customid: 'agat-18', external_link: 'https://www.subclub.org/shop/mmz.htm', note: 'Predecessor to the 18K... three minor variants.' },
             { name: 'Chaika (original, 1965)', reviewed: false, ebay_search: 'chaika camera vintage', customid: 'chaika-1', external_link: 'https://www.subclub.org/shop/mmz.htm' },
             { name: 'Chaika II', reviewed: true, hfc_page: 'chaika2.html', ebay_search: 'chaika 2', customid: 'chaika-2' },
             { name: 'Chaika 2M', reviewed: false, ebay_search: 'chaika 2m', customid: 'chaika-2m', external_link: 'https://www.subclub.org/shop/mmz.htm' }
@@ -293,15 +293,15 @@ const DATA = {
              The H35N (Dan's primary shooter since 2023, ~6 rolls logged) is
              getting its own follow-up review. Once that page exists, point
              this entry's hfc_page at it instead of ektarh35.html. */
-          { name: 'Kodak Ektar H35N', reviewed: true, hfc_page: 'ektarh35.html', ebay_search: 'reto kodak h35', customid: 'kodak-h35', note: 'Currently mapped to the H35 review page — an H35N-specific follow-up review is planned.' },
+          { name: 'Kodak Ektar H35N', reviewed: true, hfc_page: 'ektarh35.html', ebay_search: 'reto kodak h35', customid: 'kodak-h35', note: 'Currently mapped to the H35 review page. An H35N-specific follow-up review is planned.' },
           { name: 'Superheadz Golden Half', reviewed: false, ebay_search: 'superheadz golden half', customid: 'golden-half', external_link: 'https://www.subclub.org/shop/superheadz.htm' },
           { name: 'Lomography Simple Use Reloadable (Half-Frame)', reviewed: false, ebay_search: 'lomography simple use half frame', customid: 'lomo-half-frame', external_link: 'https://www.lomography.com/' }
         ],
         /* TODO(dan): deliberately excluding the cluster of near-identical
            rebadged 2020s toy half-frames (Awopzzy, BHF-01, Corex, Hayamou,
-           Kipliki, Ninoco, One Shot, Yulanbi) as individual nodes — flag
+           Kipliki, Ninoco, One Shot, Yulanbi) as individual nodes. Flag
            here in case these should get their own entries later. */
-        footnote: 'A cluster of nearly-identical rebadged toy half-frames also exists under names like Awopzzy, BHF-01, Corex, Hayamou, Kipliki, Ninoco, One Shot, and Yulanbi — same spec, different badges, not worth separate entries here.'
+        footnote: 'A cluster of nearly-identical rebadged toy half-frames also exists under names like Awopzzy, BHF-01, Corex, Hayamou, Kipliki, Ninoco, One Shot, and Yulanbi... same spec, different badges, not worth separate entries here.'
       }
     ]
   },
@@ -323,7 +323,7 @@ const DATA = {
     blurb: 'The format is coming back in digital form. One entry so far.',
     flat: true,
     cameras: [
-      { name: 'Fujifilm X Half', reviewed: true, hfc_page: 'fujixhalf.html', ebay_search: 'fujifilm x half', customid: 'fuji-x-half', note: 'No tiers here yet — first entry in what may become its own digital-half-frame branch as more appear.' }
+      { name: 'Fujifilm X Half', reviewed: true, hfc_page: 'fujixhalf.html', ebay_search: 'fujifilm x half', customid: 'fuji-x-half', note: 'No tiers here yet... first entry in what may become its own digital-half-frame branch as more appear.' }
     ]
   }
 };
@@ -472,7 +472,7 @@ function renderTiers(branchKey, branch) {
   }).join('');
 
   return `${top}
-    <div class="cf-final-heading"><h2>${esc(branch.label)} — pick a control tier</h2></div>
+    <div class="cf-final-heading"><h2>${esc(branch.label)}... pick a control tier</h2></div>
     <div class="cf-tier-list">${rows}</div>`;
 }
 
@@ -488,7 +488,7 @@ function renderOrigins(branchKey, branch, tier, tierSlugStr) {
   }).join('');
 
   return `${top}
-    <div class="cf-final-heading"><h2>${esc(tier.name)} — pick an origin</h2></div>
+    <div class="cf-final-heading"><h2>${esc(tier.name)}... pick an origin</h2></div>
     <div class="cf-origin-grid">${cards}</div>`;
 }
 
