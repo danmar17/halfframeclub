@@ -1,9 +1,11 @@
-# apex -> www: www.halfframeclub.com is the real canonical, confirmed by
-# a decade of Wayback Machine history (hundreds of indexed www pages back
-# to 2018) and the original Weebly export (every internal link used www).
-# The apex-first setup this repo briefly had was an artifact of the
-# Cloudflare Pages migration, not the site's actual established domain.
-https://halfframeclub.com/* https://www.halfframeclub.com/:splat 301!
+# apex -> www is handled by a zone-level Redirect Rule in the Cloudflare
+# dashboard (Rules -> Redirect Rules), NOT here -- Cloudflare Pages'
+# _redirects format does not actually support full-domain/host source
+# patterns like "https://halfframeclub.com/*" (unlike Netlify's dialect;
+# a rule in that shape here is silently ignored). www.halfframeclub.com
+# is the real canonical, confirmed by a decade of Wayback Machine history
+# (hundreds of indexed www pages back to 2018) and the original Weebly
+# export (every internal link used www).
 
 # Legacy Weebly journal URLs -> closest modern equivalent.
 # These were confirmed 404ing rather than redirecting, so any ranking
